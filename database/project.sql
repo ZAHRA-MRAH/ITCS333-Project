@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2024 at 06:14 PM
+-- Generation Time: Nov 12, 2024 at 10:10 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,51 @@ SET time_zone = "+00:00";
 --
 -- Database: `project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `availability`
+--
+
+CREATE TABLE `availability` (
+  `AvailabilityID` int(11) NOT NULL,
+  `RoomID` int(11) NOT NULL,
+  `Date` date NOT NULL,
+  `StartTime` time NOT NULL,
+  `EndTime` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `BookingID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `RoomID` int(11) NOT NULL,
+  `BookingData` date NOT NULL,
+  `StartTime` time NOT NULL,
+  `EndTime` time NOT NULL,
+  `Status` enum('Pending','confirmed','Cancelled') NOT NULL,
+  `BookingTime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE `room` (
+  `RoomID` int(11) NOT NULL,
+  `RoomNumber` varchar(10) NOT NULL,
+  `RoomType` varchar(50) NOT NULL,
+  `Capacity` int(11) NOT NULL,
+  `Equipment` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -45,6 +90,28 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `availability`
+--
+ALTER TABLE `availability`
+  ADD PRIMARY KEY (`AvailabilityID`),
+  ADD KEY `RoomID` (`RoomID`);
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`BookingID`),
+  ADD KEY `userID` (`userID`),
+  ADD KEY `RoomID` (`RoomID`);
+
+--
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`RoomID`),
+  ADD UNIQUE KEY `RoomNumber` (`RoomNumber`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -56,90 +123,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `availability`
 --
-ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- --------------------------------------------------------
-
---
--- Table structure for table `room`
---
-
-CREATE TABLE `room` (
-  `RoomID` int(11) NOT NULL,
-  `RoomNumber` varchar(10) NOT NULL,
-  `RoomType` varchar(50) NOT NULL,
-  `Capacity` int(11) NOT NULL,
-  `Equipment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `room`
---
-ALTER TABLE `room`
-  ADD PRIMARY KEY (`RoomID`),
-  ADD UNIQUE KEY `RoomNumber` (`RoomNumber`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `room`
---
-ALTER TABLE `room`
-  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
--- Database: `booking`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Booking`
---
-
-CREATE TABLE `booking` (
-  `BookingID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
-  `RoomID` int(11) NOT NULL,
-  `BookingData` date NOT NULL,
-  `StartTime` time NOT NULL,
-  `EndTime` time NOT NULL,
-  `Status` enum('Pending','confirmed','Cancelled') NOT NULL,
-  `BookingTime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `booking`
---
-ALTER TABLE `booking`
-  ADD PRIMARY KEY (`BookingID`),
-  ADD KEY `userID` (`userID`),
-  ADD KEY `RoomID` (`RoomID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
+ALTER TABLE `availability`
+  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `booking`
@@ -148,7 +135,29 @@ ALTER TABLE `booking`
   MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Forign key `booking`
+-- AUTO_INCREMENT for table `room`
+--
+ALTER TABLE `room`
+  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `availability`
+--
+ALTER TABLE `availability`
+  ADD CONSTRAINT `availability_ibfk_1` FOREIGN KEY (`RoomID`) REFERENCES `room` (`RoomID`);
+
+--
+-- Constraints for table `booking`
 --
 ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -158,9 +167,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
-
-
