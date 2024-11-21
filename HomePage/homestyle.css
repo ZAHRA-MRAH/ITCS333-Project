@@ -1,0 +1,126 @@
+header{
+    background-color: 	whitesmoke;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+.navbar-logo {
+    font-size: 20px;
+    font-weight: 600;
+    background-image: linear-gradient(to right, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    
+}
+
+.navbar-logo:hover{
+    background-image: linear-gradient(to right, #33245c, #bbb1d6);
+}
+.navbar{ 
+    display: flex;
+    justify-content:left; 
+    align-items: center;
+    padding: 10px 20px;
+} 
+
+.leftbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 20px; 
+    padding: 10px 20px;
+    color:#b393d3;
+}
+
+.navbutton1{
+    text-indent: 10px;
+}
+
+.navbutton1 a:link, a:visited{
+    color:#b393d3;
+    font-weight: 500;
+}
+.navbutton1 a:hover{
+    color:#8f75a8;
+    font-weight: 500;
+    transition-duration: 1s;
+    text-decoration: none;
+}
+
+.navbutton2 a:link, a:visited{
+    color:#b393d3;
+    font-weight: 500;
+    
+}
+.navbutton2 a:hover{
+    color:#8f75a8;
+    font-weight: 500;
+    transition-duration: 1s;
+    text-decoration: none;
+}
+
+
+.profile img{
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+}
+/* Nav Bar Styling end -----------Home Page Styling */
+#welcome-messege{
+    text-indent: 30px;
+    background-image: linear-gradient(to right, #b393d3, #553c9a);
+    color: transparent;
+    background-clip: text;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box{
+    background: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+}
+.form-box{
+    width: 800px;
+    height: 400px;
+    margin: 0px 10px;
+}
+.form-box header{
+    text-align: center;
+    background-color: #fdfdfd;
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdownMenuButton {
+    background-color: #553c9a;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
