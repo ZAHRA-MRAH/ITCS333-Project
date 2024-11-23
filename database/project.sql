@@ -90,7 +90,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `FirstName`, `LastName`, `Email`, `Password`, `Role`, `ProfilePic`, `CreatedAt`, `UpdatedAt`, `PhoneNo`) VALUES
-(2, 'Zahra', 'Husain', '202203876@stu.uob.edu.bh', '$2y$10$3Nu.qvJKmQ4jxUviH4.k.ONYRWzI.WyKnfxaaQ3HDYwaYG7vhrM52', 'Student', '', '2024-11-23 20:01:29', '2024-11-23 20:01:29', '38211535');
+(3, 'zahra', 'husain', '202203876@stu.uob.edu.bh', '$2y$10$jqlbWeWeSaCzpppnOAbAIeut4usH7lS8vjPJ9Y.NzgJ0rNQkrvdO6', 'Student', '../Pictures/default-picture.jpg', '2024-11-23 21:44:17', '2024-11-23 21:44:17', '38211535');
+
 
 --
 -- Indexes for dumped tables
