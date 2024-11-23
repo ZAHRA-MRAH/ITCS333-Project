@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Frontend/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
                     <input type="submit" class="btn" name="submit" value="Login" required>
                 </div>
                 <div class="links">
-                    Don't have account? <a href="register.php" >Sign Up Now</a> 
+                    Don't have an account? <a href="register.php" >Sign Up Now!</a> 
                 </div>
             </form> 
         </div>
