@@ -1,10 +1,13 @@
 <?php
 session_start();
-$_SESSION['errors'] = [];
+// Initialize errors session 
+if (!isset($_SESSION['errors'])) {
+    $_SESSION['errors'] = [];
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    require('Backend/Connection.php');
+    require('Connection.php');
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $firstName = trim($_POST['firstName']);
@@ -38,14 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['errors'][] = 'Password must be between 6 to 12 characters.';
     }
 
-    if(!preg_match($bhPhone, $Phone)) {
+    if(!preg_match($bhPhone,  $phoneNumber)) {
         $_SESSION['errors'][] = 'Invalid Phone number.';  
     }
 
-    if(!preg_match($name,$Fname)){
+    if(!preg_match($name,$firstName)){
         $_SESSION['errors'][] = 'Invalid first name.';
     } 
-    if(!preg_match($name, $Lname)) {
+    if(!preg_match($name, $lastName)) {
         $_SESSION['errors'][] = 'Invalid last name.';
     }
 
@@ -56,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //insert user into database
+    try {
     $stmt = $pdo->prepare("INSERT INTO users (FirstName, LastName, Email, Password, Role, PhoneNo)
      VALUES (:firstName, :lastName, :email, :password, :role, :phoneNo)");
       $stmt->execute([
@@ -67,11 +71,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ':phoneNo' => $phoneNumber
     ]);
 
+    $_SESSION['registration_success'] = "Registration successful. You can now log in.";
+    // Redirect to login page after successful registration
     header("Location: index.php");
     exit();
+
+      } catch (PDOException $e) {
+        // If there's database error, display it in the session errors
+        $_SESSION['errors'][] = "Database error: " . $e->getMessage();
+        header("Location: register.php");
+        exit();
+    }
     
-
-
 
 }
 
@@ -94,16 +105,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <header>Sign Up</header>
             
             <?php
-            // Display errors 
+            // Debugging step: Check the contents of the session errors array
+             //var_dump($_SESSION['errors']); 
+
+            
+            // Display errors
             if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                 echo '<ul style="color: red;">';
                 foreach ($_SESSION['errors'] as $error) {
                     echo '<li>' . $error . '</li>';
                 }
                 echo '</ul>';
-                unset($_SESSION['errors']); // Clear errors after displaying
+
+                unset($_SESSION['errors']);
+                
             }
+
             ?>
+
             
             <form action="register.php" method="POST">
                 <div class="field input">
