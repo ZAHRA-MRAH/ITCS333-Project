@@ -27,7 +27,7 @@
                 </div>
                 <div class="field input">
                     <label for="lastName">Last Name</label>
-                    <input type="text" name="lasttName" id="lasttName" autocomplete="off" required>
+                    <input type="text" name="lastName" id="lastName" autocomplete="off" required>
                 </div>
                 <div class="field input">
                     <label for="phoneNumber">Phone Number</label>
