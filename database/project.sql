@@ -80,7 +80,7 @@ CREATE TABLE `users` (
   `Email` varchar(100) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Role` enum('Student','Faculty','','') NOT NULL,
-  `ProfilePic` varchar(255) NOT NULL,
+  `ProfilePic` varchar(255) NOT NULL DEFAULT 'default-picture.jpg',
   `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
   `UpdatedAt` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `PhoneNo` varchar(15) NOT NULL
