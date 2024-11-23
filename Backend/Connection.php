@@ -4,8 +4,8 @@ $Username = "root";
 $Password = ""; 
 
 try{
-$db = new PDO($dsn, $Username, $Password);
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo = new PDO($dsn, $Username, $Password);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
     // connection errors
