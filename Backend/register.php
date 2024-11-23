@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $role = strpos($email, '@stu.uob.edu.bh') !== false ? 'Student' : 'Faculty';
+    $defaultProfilePicture = "../Pictures/default-picture.jpg";
 
     // make it js validation later 
     $UOBstuemail = "/^(20[0-9]{2}|201[0-9]|202[0-4])\d{4,5}+@stu\.uob\.edu\.bh$/";
@@ -60,14 +61,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //insert user into database
     try {
-    $stmt = $pdo->prepare("INSERT INTO users (FirstName, LastName, Email, Password, Role, PhoneNo)
-     VALUES (:firstName, :lastName, :email, :password, :role, :phoneNo)");
+    $stmt = $pdo->prepare("INSERT INTO users (FirstName, LastName, Email, Password, Role, ProfilePic, PhoneNo)
+     VALUES (:firstName, :lastName, :email, :password, :role, :ProfilePic, :phoneNo)");
       $stmt->execute([
         ':firstName' => $firstName,
         ':lastName' => $lastName,
         ':email' => $email,
         ':password' => $hashed_password,
         ':role' => $role,
+        ':ProfilePic'=>  $defaultProfilePicture,
         ':phoneNo' => $phoneNumber
     ]);
 
@@ -95,10 +97,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Frontend/style.css">
+    <link rel="stylesheet" href="../Frontend/style.css">
     <title>Register</title>
 </head>
-
+ 
 <body>
     <div class="container">
         <div class="box form-box">
