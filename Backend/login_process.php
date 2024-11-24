@@ -29,8 +29,8 @@
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['Password'])) {
-            $_SESSION['email'] = $user['Email'];
-            $_SESSION['user_id'] = $user['ID']; 
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['user_id'] = $user['userID']; 
             $_SESSION['login_attempts'] = 0;
             header("Location: homepage.php");
             exit();
