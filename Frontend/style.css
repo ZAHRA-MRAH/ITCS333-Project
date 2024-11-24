@@ -18,6 +18,8 @@ body{
     flex-direction: column;
     padding: 25px 25px;
     border-radius: 20px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+    0 32px 64px -48px rgba(0,0,0,0.5);
 
 }
 .form-box{
@@ -46,7 +48,7 @@ body{
 }
 .btn{
     height: 35px;
-    background: rgb(119, 156, 208);
+    background: #553c9a;
     border: 0;
     border-radius: 5px;
     color:#fff;
@@ -65,3 +67,8 @@ body{
 .links{
     margin-bottom: 15px;
 }
+
+header {
+    font-weight: bolder;
+}
+
