@@ -1,6 +1,6 @@
 <?php
-session_srart();
+session_start();
 $_SESSION = array();
-seesion_destroy();
+session_destroy();
 header("Location: login.php");
 ?>
