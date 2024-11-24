@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $_SESSION['registration_success'] = "Registration successful. You can now log in.";
     // Redirect to login page after successful registration
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
 
       } catch (PDOException $e) {
