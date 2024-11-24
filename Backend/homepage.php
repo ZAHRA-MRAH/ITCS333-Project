@@ -1,4 +1,27 @@
+<?php 
+session_start();
+require('Connection.php');
 
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+
+    // Fetch the user's name
+    $query = "SELECT * FROM users WHERE userID = :user_id";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        $fname = $user['FirstName'];
+        $profilePic = $user['ProfilePic']; 
+    } 
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +38,8 @@
         
 <nav class="navbar">
     <a class="navbar-logo" href="#">
-      <img src="https://placehold.co/30x30" width="30" height="30" class="d-inline-block align-top" alt="">
-      UOB Booking
+      <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
+      UOB IT College Room Booking System 
     </a>
     
   
@@ -30,17 +53,27 @@
         <a href="#ViewBooking" id="navlink">View Booking</a>
 
     </div>
+
+    <div class="navbutton2">
+        <a href="profile.php" id="navlink">Profile</a>
+
+    </div>
+
+    <div class="navbutton2">
+        <a href="logout.php" id="navlink">log out</a>
+
+    </div>
 </nav>
 
 <nav class="rightbar">
     <div class="profile">
-        <img src="https://placehold.co/30x30" alt="Profile">
+        <img src= <?php echo $profilePic ?> alt="Profile">
     </div>
 </nav>
 </nav>
     </header>
         <main>
-            <h2 id="welcome-messege">Welcome username!</h2>
+            <h2 id="welcome-messege">Welcome <?php echo htmlspecialchars($fname)?>!</h2>
               <div class="container">
                   <div class="box form-box">
                     <header>Search for Available Rooms:</header>
