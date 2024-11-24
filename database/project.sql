@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2024 at 08:16 PM
+-- Generation Time: Nov 24, 2024 at 04:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,6 +81,32 @@ CREATE TABLE `room` (
   `Equipment` text NOT NULL,
   `imgURL` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`RoomID`, `RoomNumber`, `RoomType`, `Capacity`, `Equipment`, `imgURL`) VALUES
+(1, 'S40-049', 'Classroom', 35, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(2, 'S40-051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(3, 'S40-056', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(4, 'S40-057', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(5, 'S40-058', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(6, 'S40-060', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(7, 'S40-1043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200\r\n'),
+(8, 'S40-1045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(9, 'S40-1047', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(10, 'S40-1048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(11, 'S40-1050', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(12, 'S40-1052', 'Computer lab', 40, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(13, 'S40-2043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(14, 'S40-2045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(15, 'S40-2046', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(16, 'S40-2048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(17, 'S40-2049', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
+(19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200');
 
 -- --------------------------------------------------------
 
@@ -176,13 +202,13 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
