@@ -98,6 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Frontend/style.css">
+    <script defer src="../Frontend/RegValidation.js"></script>
     <title>Register</title>
 </head>
  
@@ -106,6 +107,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="box form-box">
             <header>Sign Up</header>
             
+            
+
+            
+            <form id="form" action="register.php" method="POST">
+                <div class="field input">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required>
+                    
+                </div>
+
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    
+                </div>
+             
+                <div class="field input">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" autocomplete="off" required>
+                    
+                </div>
+                <div class="field input">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" autocomplete="off" required>
+                    
+                </div>
+                <div class="field input">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" autocomplete="off" required>
+                    
+                </div>
+                <div class="field">
+                    <input type="submit" class="btn" name="submit" value="Sign Up" required>
+                </div>
+                <div class="links">
+                    Already a member? <a href="login.php">Sign In</a>
+                </div>
+            </form>
+
             <?php
             // Debugging step: Check the contents of the session errors array
              //var_dump($_SESSION['errors']); 
@@ -124,37 +164,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             ?>
-
-            
-            <form action="register.php" method="POST">
-                <div class="field input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" required>
-                </div>
-
-                <div class="field input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
-                </div>
-                <div class="field input">
-                    <label for="firstName">First Name</label>
-                    <input type="text" name="firstName" id="firstName" autocomplete="off" required>
-                </div>
-                <div class="field input">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" autocomplete="off" required>
-                </div>
-                <div class="field input">
-                    <label for="phoneNumber">Phone Number</label>
-                    <input type="tel" name="phoneNumber" id="phoneNumber" autocomplete="off" required>
-                </div>
-                <div class="field">
-                    <input type="submit" class="btn" name="submit" value="Sign Up" required>
-                </div>
-                <div class="links">
-                    Already a member? <a href="login.php">Sign In</a>
-                </div>
-            </form>
         </div>
     </div>
 
