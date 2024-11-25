@@ -29,6 +29,7 @@
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['Password'])) {
+            $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $user['email'];
             $_SESSION['user_id'] = $user['userID']; 
             $_SESSION['login_attempts'] = 0;
