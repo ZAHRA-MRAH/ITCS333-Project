@@ -60,7 +60,7 @@ body{
     padding: 0px 10px;
 }
 .btn:hover{
-    opacity: 0.82;
+    opacity: 0.82 !important; 
 }
 .submit{
     width: 100%;

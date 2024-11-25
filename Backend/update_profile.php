@@ -102,6 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../Frontend/style.css">
     <title>Profile</title>
 </head>
@@ -109,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <div class="box form-box">
-            <header>Profile Information</header>
+            <header>Update Profile Information</header>
 
             <!-- Profile Picture Display -->
             <div class="profile-pic">
@@ -136,12 +138,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="field input">
                     <label for="email">Email</label>
-                    <p><?php echo $email; ?></p> <!-- Display email from the database -->
+                    <input  type="text" value="<?php echo $email; ?>" disabled > <!-- Display email from the database -->
                 </div>
 
-                <div class="field input">
-                    <label for="profilePic">Upload Profile Picture</label>
-                    <input type="file" name="profilePic" id="profilePic" accept="image/*">
+                <div class="field input mb-3" >
+                    <label for="profilePic" class="form-label">Upload Profile Picture</label>
+                    <input class="form-control" type="file" name="profilePic" id="profilePic" accept="image/*">
                 </div>
 
 
