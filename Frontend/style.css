@@ -27,7 +27,7 @@ body{
 
 }
 .form-box{
-    width: 450px;
+    width: 500px;
     margin: 0px 10px;
 }
 .form-box header{
@@ -75,3 +75,17 @@ body{
 header {
     font-weight: bolder;
 }
+
+ .field.input.success input {
+    border-color: #09c372;
+}
+
+.field.input.error-message input {
+    border-color: #ff3860;
+}
+
+.field.input .error-message {
+    color: #ff3860;
+    font-size: 15px;
+    height: 13px;
+} 
