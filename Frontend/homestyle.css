@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B500&display=swap%27%29%3B');
 header{
     background-color: 	whitesmoke;
     border-bottom-right-radius:5px;
     border-bottom-left-radius: 5px;
 }
-body{
-        font-family: 'Poppins', sans-serif;
-}
+
 
 .navbar-logo {
     font-size: 20px;
@@ -89,14 +86,15 @@ body{
     background: #fdfdfd;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 25px 25px;
     border-radius: 20px;
     box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
                 0 32px 64px -48px rgba(0,0,0,0.5);
 }
 .form-box{
-    width: 800px;
-    height: 400px;
+    width: 600px;
+    height: 300px;
     margin: 0px 10px;
 }
 .form-box header{
@@ -108,22 +106,57 @@ body{
     margin-bottom: 10px;
 }
 
-.dropdown{
-    position: relative;
-    display: inline-block;
+.form-select{
+    align-items: center;
+    background-color: #b393d3;
+    border-radius: 5px;
+    font-size: 17px;
+    border-color: transparent;
+    width: 150px;
+    height: 35px;
+    color: #fdfdfd;
+    font-weight:bold ;
 }
-.dropdown {
-    position: relative;
-    display: inline-block;
+.form-select option{
+    text-align: center;
+    background-color: #fdfdfd;
+    color: #b393d3;
 }
 
-#dropdownMenuButton {
-    background-color: #553c9a;
-    color: white;
-    font-size: 16px;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.Date{
+    padding-top: 10px;
+    text-align: center;
 }
+.Datespan{
+    
+    color: #b393d3;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.Date input{
+    cursor: pointer;
+    background-color: #fdfdfd;
+    border-radius: 4px ;
+    border-color:gainsboro ;
+    color:rgb(83, 81, 81);
+    font-weight: 300;
+    
+}
+
+#searchbtn{
+    margin-top: 40px ;
+    background-color: #b393d3;
+    border-radius: 5px;
+    font-size: 17px;
+    border-color: transparent;
+    width: 200px;
+    cursor: pointer;
+    height: 40px;
+    color: #fdfdfd;
+    font-weight:bold ;
+}
+
+/* #searchbtn :hover{
+    
+} */

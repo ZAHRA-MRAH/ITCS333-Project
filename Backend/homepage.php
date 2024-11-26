@@ -95,26 +95,24 @@ if (isset($_SESSION['user_id'])) {
               ?></h2>
               <div class="container">
                   <div class="box form-box">
-                    <header>Search forr Available Rooms:</header>
+                    <header>Search for Available Rooms:</header>
                     <form action="" method="post">
-                    <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="true">
-                      Room Type
-                    </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a href="" class="dropdown-item" onclick="show('Classroom')">Classroom</a></li>
-                        <li><a href="" class="dropdown-item" onclick="show('Computer Lab')">Computer Lab</a></li>
-                        <li><a href="" class="dropdown-item" onclick="show('Meeting Room')">Meeting Room</a></li>
-                      </ul>
+                    <select class="form-select" aria-label="Default select example">
+                      <div id="options">
+                      <option selected>Room Type</option>
+                      <option value="1">Classroom</option>
+                      <option value="2">Computer Lab</option>
+                      <option value="3">Meeting Room</option>
                     </div>
-                
-  
+                    </select>
+
+               
                 <div class="Date">
-                  <span class ="Date">Pick a Date</span>
-                  <input type="date" name="Date" value="yyyy-mm-dd">
+                  <span class ="Datespan">Pick a Date</span><br>
+                  <input type="date" name="Date" value="2024-12-07" >
                 </div>
   
-                <input type="submit" value="Search">
+                <input type="submit" id="searchbtn" value="Search">
             </form>
           </div>
             </div>
