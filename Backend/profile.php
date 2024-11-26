@@ -28,6 +28,7 @@ $firstName = $user['FirstName'];
 $lastName = $user['LastName'];
 $phoneNumber = $user['PhoneNo'];
 $profilePic = $user['ProfilePic'];
+$Role = $user['Role'];
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -88,7 +89,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="field input">
                 <label for="email">Email</label> <br>
-                <input  type="text" value="<?php echo $email; ?>" disabled ><!-- Display email from the database -->
+                <input  type="text" value="<?php echo $email; ?>" disabled >
+            </div>
+
+            <div class="field input">
+                <label for="email">Role</label> <br>
+                <input  type="text" value="<?php echo $Role; ?>" disabled >
             </div>
 
             <div class="field input">
