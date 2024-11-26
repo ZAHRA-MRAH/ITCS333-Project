@@ -2,6 +2,12 @@
 session_start();
 require('Connection.php');
 
+// Check if the user is logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+  header("Location: login.php");
+  exit;
+}
+
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 
@@ -103,8 +109,8 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 
   
-                <div clas="Date">
-                  <span class"Date>Pick a Date</span>
+                <div class="Date">
+                  <span class ="Date">Pick a Date</span>
                   <input type="date" name="Date" value="yyyy-mm-dd">
                 </div>
   

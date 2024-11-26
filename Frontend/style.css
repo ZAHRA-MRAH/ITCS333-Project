@@ -1,10 +1,14 @@
+/*login and registration and profile view styling*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B500&display=swap%27%29%3B');
 *{
     padding: 0;
     margin:0;
     box-sizing: border-box;
 }
 body{
-    background: #e4e4e4;
+    background: #fdfdfd;
+    font-family: 'Poppins', sans-serif;
+
 }
 .container{
     display: flex;
@@ -59,7 +63,7 @@ body{
     padding: 0px 10px;
 }
 .btn:hover{
-    opacity: 0.82;
+    opacity: 0.82 !important; 
 }
 .submit{
     width: 100%;
@@ -71,4 +75,3 @@ body{
 header {
     font-weight: bolder;
 }
-
