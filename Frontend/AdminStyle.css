@@ -93,6 +93,54 @@ header{
     padding: 20px;
     border-radius: 20px ;
 }
+.box-left h2{
+    font-size:25px;
+    font-weight: 600;
+    padding-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+} 
+.box-left form .field input{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.box-left form .field input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none; 
+}
+.field textarea {
+    display: block; /* Ensures it takes up a new line */
+    width: 100%; /* Full width of the container */
+    font-size: 16px; /* Same size as other input fields */
+    padding: 10px; /* Adds spacing inside the field */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    height: 50px; /* Adjust height to your preference */
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */
+}
+.btn{
+    height: 35px;
+    background: #553c9a;
+    border: 0;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+.btn:hover{
+    opacity: 0.82 !important; 
+}
+.submit{
+    width: 100%;
+}
 
 
 
