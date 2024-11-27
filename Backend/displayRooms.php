@@ -178,4 +178,6 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 
+.
+
 </html>

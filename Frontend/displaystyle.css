@@ -1,6 +1,4 @@
-/* styles.css */
 
-/* General Layout */
 .display-rooms-section body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -45,16 +43,7 @@
     margin-top: 10px;
 }
 
-.display-rooms-section .room-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
-}
 
-.display-rooms-section .room-card a:hover {
-    text-decoration: underline;
-}
 
 
 
