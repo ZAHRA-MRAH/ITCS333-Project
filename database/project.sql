@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2024 at 04:59 PM
+-- Generation Time: Nov 25, 2024 at 08:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -160,7 +160,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `FirstName`, `LastName`, `Email`, `Password`, `Role`, `ProfilePic`, `CreatedAt`, `UpdatedAt`, `PhoneNo`) VALUES
-(3, 'zahra', 'husain', '202203876@stu.uob.edu.bh', '$2y$10$jqlbWeWeSaCzpppnOAbAIeut4usH7lS8vjPJ9Y.NzgJ0rNQkrvdO6', 'Student', '../Pictures/default-picture.jpg', '2024-11-23 21:44:17', '2024-11-23 21:44:17', '38211535'),
+(3, 'zahraa', 'husain', '202203876@stu.uob.edu.bh', '$2y$10$jqlbWeWeSaCzpppnOAbAIeut4usH7lS8vjPJ9Y.NzgJ0rNQkrvdO6', 'Student', '../uploads/6744c20b752e8.jpg', '2024-11-23 21:44:17', '2024-11-25 21:35:47', '38211535'),
 (5, 'Batool', 'Alsayed', '202109262@stu.uob.edu.bh', '$2y$10$uLEXC1Z1jJpHZOOTwvcgyuJ485em8BBnDcQ92knAx7wEW04eYQEwG', 'Student', '../Pictures/default-picture.jpg', '2024-11-24 07:27:10', '2024-11-24 07:27:10', '36366460');
 
 --
@@ -218,7 +218,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `availability`
 --
 ALTER TABLE `availability`
-  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `booking`

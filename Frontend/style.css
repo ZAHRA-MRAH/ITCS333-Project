@@ -1,10 +1,14 @@
+/*login and registration and profile view styling*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B500&display=swap%27%29%3B');
 *{
     padding: 0;
     margin:0;
     box-sizing: border-box;
 }
 body{
-    background: #e4e4e4;
+    background: #fdfdfd;
+    font-family: 'Poppins', sans-serif;
+
 }
 .container{
     display: flex;
@@ -23,7 +27,7 @@ body{
 
 }
 .form-box{
-    width: 450px;
+    width: 675px;
     margin: 0px 10px;
 }
 .form-box header{
@@ -59,7 +63,7 @@ body{
     padding: 0px 10px;
 }
 .btn:hover{
-    opacity: 0.82;
+    opacity: 0.82 !important; 
 }
 .submit{
     width: 100%;
@@ -72,3 +76,16 @@ header {
     font-weight: bolder;
 }
 
+ .field.input.success input {
+    border-color: #09c372;
+}
+
+.field.input.error-message input {
+    border-color: #ff3860;
+}
+
+.field.input .error-message {
+    color: #ff3860;
+    font-size: 15px;
+    height: 13px;
+} 
