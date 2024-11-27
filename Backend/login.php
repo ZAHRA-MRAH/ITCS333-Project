@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
 <body>
     <div class="container">
         <div class="box form-box">
-            <header>Sign Up</header>
+            <header>Sign in</header>
             <?php
             if (isset($_SESSION['login_error'])) {
                 echo "<p style='color: red;'>" . $_SESSION['login_error'] . "</p>";
