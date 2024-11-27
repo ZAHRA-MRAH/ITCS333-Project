@@ -57,17 +57,18 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="modalLabel<?php echo $room['RoomID']; ?>">Room <?php echo $room['RoomNumber']; ?> Details</h5>
-                                        <!-- Removed the close (X) button here -->
+
                                     </div>
                                     <div class="modal-body">
-                                        <h4>Capacity:</h4><p> <?php echo $room['Capacity']; ?> people</p>
+                                        <h4>Capacity:</h4>
+                                        <p> <?php echo $room['Capacity']; ?> people</p>
                                         <h4>Equipment:</h4>
                                         <ul>
                                             <?php
-                                            $equipment = explode("\n", $room['Equipment']); 
+                                            $equipment = explode("\n", $room['Equipment']);
                                             foreach ($equipment as $item) {
-                                                
-                                                echo '<li>'.trim($item).'</li>';
+
+                                                echo '<li>' . trim($item) . '</li>';
                                             }
                                             ?>
                                         </ul>
@@ -77,8 +78,14 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
                                         <!-- Change the color of the Close button using a custom class or inline style -->
                                         <button type="button" class="btn custom-close-color" data-bs-dismiss="modal">Close</button>
 
-                                        <!-- Book button that redirects to the booking page -->
-                                        <a href="bookingPage.php?room_id=<?php echo $room['RoomID']; ?>" class="btn custom-book-button">Book Room</a>
+                                        <!-- Form to send room details to booking.php -->
+                                        <form method="POST" action="booking.php">
+                                            <input type="hidden" name="RoomID" value="<?php echo $room['RoomID']; ?>">
+                                            <input type="hidden" name="RoomNumber" value="<?php echo $room['RoomNumber']; ?>">
+                                            <input type="hidden" name="Capacity" value="<?php echo $room['Capacity']; ?>">
+                                            <input type="hidden" name="Equipment" value="<?php echo $room['Equipment']; ?>">
+                                            <button type="submit" class="btn custom-book-button">Book Room</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -110,14 +117,15 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
                                     </div>
                                     <div class="modal-body">
-                                        <h4>Capacity:</h4><p> <?php echo $lab['Capacity']; ?> people</p>
+                                        <h4>Capacity:</h4>
+                                        <p> <?php echo $lab['Capacity']; ?> people</p>
                                         <h4>Equipment:</h4>
                                         <ul>
                                             <?php
-                                           $equipment = explode("\n", $lab['Equipment']); 
+                                            $equipment = explode("\n", $lab['Equipment']);
                                             foreach ($equipment as $item) {
-                                               
-                                                echo '<li>'.trim($item).'</li>';
+
+                                                echo '<li>' . trim($item) . '</li>';
                                             }
                                             ?>
                                         </ul>
@@ -126,8 +134,14 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
                                         <button type="button" class="btn custom-close-color" data-bs-dismiss="modal">Close</button>
 
-                                        <!-- Book button that redirects to the booking page -->
-                                        <a href="bookingPage.php?room_id=<?php echo $lab['RoomID']; ?>" class="btn custom-book-button">Book Room</a>
+                                        <!-- Form to send room details to booking.php -->
+                                        <form method="POST" action="booking.php">
+                                            <input type="hidden" name="RoomID" value="<?php echo $lab['RoomID']; ?>">
+                                            <input type="hidden" name="RoomNumber" value="<?php echo $lab['RoomNumber']; ?>">
+                                            <input type="hidden" name="Capacity" value="<?php echo $lab['Capacity']; ?>">
+                                            <input type="hidden" name="Equipment" value="<?php echo $lab['Equipment']; ?>">
+                                            <button type="submit" class="btn custom-book-button">Book Room</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -178,6 +192,6 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 
-.
+
 
 </html>

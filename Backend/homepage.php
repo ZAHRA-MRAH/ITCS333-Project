@@ -55,7 +55,7 @@ if (isset($_SESSION['user_id'])) {
       <nav class="leftbar">
 
         <div class="navbutton1">
-          <a href="#Home" id="navlink">Home</a>
+         <a href="homepage.php" id="navlink">Home</a>
         </div>
 
         <div class="navbutton2">
