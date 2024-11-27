@@ -61,11 +61,10 @@ body{
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
     gap:20px;
     padding:20px;
     grid-template-areas: 
-    "welcome-message welcome-message"
     "box-left box-right"
     "box-bottom box-bottom"
     ; 
@@ -75,13 +74,6 @@ header{
     background-color: 	whitesmoke;
     border-bottom-right-radius:5px;
     border-bottom-left-radius: 5px;
-}
-#welcome-message{
-    grid-area: Welcome-message;
-    text-indent: 30px;
-    background-image: linear-gradient(to right, #b393d3, #553c9a);
-    color: transparent;
-    background-clip: text;
 }
 .box-left{
     grid-area: box-left;

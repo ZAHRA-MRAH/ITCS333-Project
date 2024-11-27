@@ -27,14 +27,22 @@
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
         if ($user && password_verify($password, $user['Password'])) {
+            if ($email === '200000000@stu.uob.edu.bh' && $password === 'UOBAdmin123') {
+                // Redirect to admin dashboard
+                $_SESSION['loggedin'] = true;
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['user_id'] = $user['userID'];
+                header("Location: AdminPanel.php");
+                exit();
+            } else{
             $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $user['email'];
             $_SESSION['user_id'] = $user['userID']; 
             $_SESSION['login_attempts'] = 0;
             header("Location: homepage.php");
             exit();
+            }
         } else {
             $_SESSION['login_attempts']++;
             $_SESSION['last_attempt_time'] = time();
