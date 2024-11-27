@@ -29,18 +29,6 @@
 </nav>
 </header>
 <main id="main">
-<h2 id="welcome-message"><?php
-                          try {
-                            if (!isset($fname)) {
-                              throw new Exception("Name not set");
-                            }
-
-                            echo "<h2 id='welcome-messege'>Welcome " . htmlspecialchars($fname) . "!</h2>";
-                          } catch (Exception $e) {
-
-              echo "<h2 id='welcome-messege'>Welcome Guest!</h2>";
-          }
-          ?></h2>
                 <div class="box-left">
                     <h2>Add Room</h2>
                     <form action="" method="POST">
