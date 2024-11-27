@@ -5658,7 +5658,7 @@ CREATE TABLE `booking` (
   `BookingID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `RoomID` int(11) NOT NULL,
-  `BookingData` date NOT NULL,
+  `BookingDate` date NOT NULL,
   `StartTime` time NOT NULL,
   `EndTime` time NOT NULL,
   `Status` enum('Pending','confirmed','Cancelled') NOT NULL,
