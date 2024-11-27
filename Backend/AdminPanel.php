@@ -20,9 +20,6 @@
         <a href="#Home" id="navlink">Home</a>
         </div>
         <div class="navbutton2">
-        <a href="profile.php" id="navlink">Profile</a>
-        </div>
-        <div class="navbutton2">
         <a href="logout.php" id="navlink">log out</a>
         </div>
     </nav>
@@ -31,23 +28,35 @@
 <main id="main">
                 <div class="box-left">
                     <h2>Add Room</h2>
-                    <form action="" method="POST">
-                        <label for="RoomNumber">Room Number:</label>
-                        <input type="text" id="RoomNumber" name="RoomNumber" required>
+                    <form id="roomForm" action="" method="POST">
+                        <div class="field input">
+                            <label for="RoomNumber">Room Number:</label>
+                            <input type="text" id="RoomNumber" name="RoomNumber" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="field input">
+                            <label for="RoomType">Room Type:</label>
+                            <input type="text" id="RoomType" name="RoomType" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="field input">
+                            <label for="Capacity">Capacity:</label>
+                            <input type="number" id="Capacity" name="Capacity" required>
+                            <span class="error-message"></span>
+                        </div>
 
-                        <label for="RoomType">Room Type:</label>
-                        <input type="text" id="RoomType" name="RoomType" required>
+                        <div class="field input">
+                            <label for="Equipment">Equipment:</label>
+                            <textarea id="Equipment" name="Equipment" required></textarea>
+                            <span class="error-message"></span>
+                        </div>
 
-                        <label for="Capacity">Capacity:</label>
-                        <input type="number" id="Capacity" name="Capacity" required>
-
-                        <label for="Equipment">Equipment:</label>
-                        <textarea id="Equipment" name="Equipment" required></textarea>
-
-                        <label for="imgURL">Upload Image:</label>
-                        <input type="file" id="imgURL" name="imgURL" required>
-
-                        <button type="submit">Add Room</button>
+                        <div class="field input">
+                            <label for="imgURL">Upload Image:</label>
+                            <input type="file" id="imgURL" name="imgURL" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <button class="btn" type="submit">Add Room</button>
                     </form>
                 </div>
                 <div class="box-right">
