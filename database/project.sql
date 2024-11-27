@@ -5661,7 +5661,7 @@ CREATE TABLE `booking` (
   `BookingDate` date NOT NULL,
   `StartTime` time NOT NULL,
   `EndTime` time NOT NULL,
-  `Status` enum('Pending','confirmed','Cancelled') NOT NULL,
+  `Status` enum('Confirmed','Cancelled') NOT NULL,
   `BookingTime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
