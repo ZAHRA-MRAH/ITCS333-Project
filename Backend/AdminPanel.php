@@ -28,8 +28,8 @@
     </nav>
 </nav>
 </header>
-<main>
-<h2 id="welcome-messege"><?php
+<main id="main">
+<h2 id="welcome-message"><?php
                           try {
                             if (!isset($fname)) {
                               throw new Exception("Name not set");
@@ -41,27 +41,33 @@
               echo "<h2 id='welcome-messege'>Welcome Guest!</h2>";
           }
           ?></h2>
-          <div class="container">
-              <div class="box-left">
-                <form action="" method="POST">
-                    <label for="RoomNumber">Room Number:</label>
-                    <input type="text" id="RoomNumber" name="RoomNumber" required>
+                <div class="box-left">
+                    <h2>Add Room</h2>
+                    <form action="" method="POST">
+                        <label for="RoomNumber">Room Number:</label>
+                        <input type="text" id="RoomNumber" name="RoomNumber" required>
 
-                    <label for="RoomType">Room Type:</label>
-                    <input type="text" id="RoomType" name="RoomType" required>
+                        <label for="RoomType">Room Type:</label>
+                        <input type="text" id="RoomType" name="RoomType" required>
 
-                    <label for="Capacity">Capacity:</label>
-                    <input type="number" id="Capacity" name="Capacity" required>
+                        <label for="Capacity">Capacity:</label>
+                        <input type="number" id="Capacity" name="Capacity" required>
 
-                    <label for="Equipment">Equipment:</label>
-                    <textarea id="Equipment" name="Equipment" required></textarea>
+                        <label for="Equipment">Equipment:</label>
+                        <textarea id="Equipment" name="Equipment" required></textarea>
 
-                    <label for="imgURL">Upload Image:</label>
-                    <input type="file" id="imgURL" name="imgURL" required>
+                        <label for="imgURL">Upload Image:</label>
+                        <input type="file" id="imgURL" name="imgURL" required>
 
-                    <button type="submit">Add Room</button>
-                </form>
+                        <button type="submit">Add Room</button>
+                    </form>
+                </div>
                 <div class="box-right">
+                    <h2>Update Room</h2>
+                    Update
+                </div>
+                <div class="box-bottom">
+                    <h2>Delete Room</h2>
                 <?php
                     require("Connection.php");
                     $query = "SELECT * FROM `room` ";
@@ -93,8 +99,6 @@
                     } else {echo "No rooms found";};
                 ?>
               </div>
-
-          </div>
     </main>
 </body>
 </html>

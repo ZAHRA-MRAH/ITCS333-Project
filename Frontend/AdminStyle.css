@@ -1,10 +1,3 @@
-header{
-    background-color: 	whitesmoke;
-    border-bottom-right-radius:5px;
-    border-bottom-left-radius: 5px;
-}
-
-
 .navbar-logo {
     font-size: 20px;
     font-weight: 600;
@@ -14,7 +7,6 @@ header{
     text-decoration: none;
     
 }
-
 .navbar-logo:hover{
     background-image: linear-gradient(to right, #33245c, #bbb1d6);
 }
@@ -24,7 +16,6 @@ header{
     align-items: center;
     padding: 10px 20px;
 } 
-
 .leftbar {
     display: flex;
     justify-content: space-between;
@@ -33,11 +24,9 @@ header{
     padding: 10px 20px;
     color:#b393d3;
 }
-
 .navbutton1{
     text-indent: 10px;
 }
-
 .navbutton1 a:link, a:visited{
     color:#b393d3;
     font-weight: 500;
@@ -48,7 +37,6 @@ header{
     transition-duration: 1s;
     text-decoration: none;
 }
-
 .navbutton2 a:link, a:visited{
     color:#b393d3;
     font-weight: 500;
@@ -60,30 +48,58 @@ header{
     transition-duration: 1s;
     text-decoration: none;
 }
-
-#welcome-messege{
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    ; 
+}
+#main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap:20px;
+    padding:20px;
+    grid-template-areas: 
+    "welcome-message welcome-message"
+    "box-left box-right"
+    "box-bottom box-bottom"
+    ; 
+}
+header{
+    grid-area: header;
+    background-color: 	whitesmoke;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius: 5px;
+}
+#welcome-message{
+    grid-area: Welcome-message;
     text-indent: 30px;
     background-image: linear-gradient(to right, #b393d3, #553c9a);
     color: transparent;
     background-clip: text;
 }
-
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.box{
+.box-left{
+    grid-area: box-left;
     background: #fdfdfd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 25px;
-    border-radius: 20px;
-    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-                0 32px 64px -48px rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 20px ;
+}
+.box-right{
+    grid-area: box-right;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 20px ;
+}
+.box-bottom{
+    grid-area: box-bottom;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 20px ;
 }
 
 
