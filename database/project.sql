@@ -35,6 +35,14 @@ CREATE TABLE `admins` (
   `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `UpdatedAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`AdminID`, `Username`, `Email`, `PasswordHash`, `CreatedAt`, `UpdatedAt`) VALUES
+(1, 'Admin', 'Admin@uob.edu.bh', '$2y$10$JaWJB6BNUlzkcgrCzNTnmuqNLgKXbCIBO1quQDkDmrEVTRSMBe5zW', '2024-11-27 10:02:44', '2024-11-27 10:02:44');
+
+
 
 -- --------------------------------------------------------
 
