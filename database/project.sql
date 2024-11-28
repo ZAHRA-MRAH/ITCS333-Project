@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2024 at 07:52 PM
+-- Generation Time: Nov 28, 2024 at 11:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5665,6 +5665,15 @@ CREATE TABLE `booking` (
   `BookingTime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`BookingID`, `userID`, `RoomID`, `BookingDate`, `StartTime`, `EndTime`, `Status`, `BookingTime`) VALUES
+(15, 3, 1, '2024-11-29', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 23:55:29'),
+(16, 5, 2, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 21:58:04'),
+(19, 3, 1, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-29 00:10:51');
+
 -- --------------------------------------------------------
 
 --
@@ -5794,7 +5803,7 @@ ALTER TABLE `availability`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `room`
