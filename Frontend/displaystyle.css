@@ -1,6 +1,4 @@
-/* styles.css */
 
-/* General Layout */
 .display-rooms-section body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -45,53 +43,10 @@
     margin-top: 10px;
 }
 
-.display-rooms-section .room-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
-}
 
-.display-rooms-section .room-card a:hover {
-    text-decoration: underline;
-}
 
-/* Room Details Page */
-.room-details-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
-.room-info {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-}
 
-.room-info img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-}
 
-.availability {
-    margin-top: 20px;
-}
 
-.availability ul {
-    list-style-type: none;
-    padding: 0;
-}
 
-.availability li {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}

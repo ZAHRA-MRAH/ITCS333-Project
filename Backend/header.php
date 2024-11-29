@@ -25,15 +25,14 @@ if (isset($_SESSION['user_id'])) {
   }
 }
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
   <link rel="stylesheet" href="../Frontend/homestyle.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -55,7 +54,7 @@ if (isset($_SESSION['user_id'])) {
       <nav class="leftbar">
 
         <div class="navbutton1">
-         <a href="homepage.php" id="navlink">Home</a>
+          <a href="homepage.php" id="navlink">Home</a>
         </div>
 
         <div class="navbutton2">
@@ -81,48 +80,3 @@ if (isset($_SESSION['user_id'])) {
       </nav>
     </nav>
   </header>
-  <main>
-    <h2 id="welcome-messege"><?php
-                              try {
-                                if (!isset($fname)) {
-                                  throw new Exception("Name not set");
-                                }
-
-                                echo "<h2 id='welcome-messege'>Welcome " . htmlspecialchars($fname) . "!</h2>";
-                              } catch (Exception $e) {
-
-                  echo "<h2 id='welcome-messege'>Welcome Guest!</h2>";
-              }
-              ?></h2>
-              <div class="container">
-                  <div class="box form-box">
-                    <header>Search for Available Rooms:</header>
-                    <form action="" method="post">
-                    <select class="form-select" aria-label="Default select example">
-                      <div id="options">
-                      <option selected>Room Type</option>
-                      <option value="1">Classroom</option>
-                      <option value="2">Computer Lab</option>
-                      <option value="3">Meeting Room</option>
-                    </div>
-                    </select>
-
-               
-                <div class="Date">
-                  <span class ="Datespan">Pick a Date</span><br>
-                  <input type="date" name="Date" value="2024-12-07" >
-                </div>
-  
-                <input type="submit" id="searchbtn" value="Search">
-            </form>
-          </div>
-            </div>
-        </main>
-
-  <?php 
-   require('displayRooms.php');
-  ?>
-
-</body>
-
-</html>
