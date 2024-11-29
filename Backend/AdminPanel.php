@@ -84,7 +84,7 @@
                 </div>
                 <div class="box-bottom">
                     <h2>Delete Room</h2>
-                <?php
+                    <?php
                     if (isset($_GET['deletError'])) {
                         echo "<div class='error-message'>{$_GET['deletError']}</div>";
                     }
@@ -92,6 +92,8 @@
                     if (isset($_GET['deleteSuccess'])) {
                         echo "<div class='success-message'>{$_GET['deleteSuccess']}</div>";
                     }
+                    ?>
+                <?php
                     require("Connection.php");
                     $query = "SELECT * FROM `room` ";
                     $Roomstmt = $pdo->prepare($query);
