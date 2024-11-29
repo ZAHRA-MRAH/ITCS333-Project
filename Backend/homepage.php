@@ -137,25 +137,25 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <script>
-document.getElementById('searchForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevent traditional form submission
+      document.getElementById('searchForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent traditional form submission
 
-    const formData = new FormData(e.target);
+        const formData = new FormData(e.target);
 
-    // Send fetch request
-    const response = await fetch('search.php', {
-        method: 'POST',
-        body: formData,
-    });
+        // Send fetch request
+        const response = await fetch('search.php', {
+          method: 'POST',
+          body: formData,
+        });
 
-    const rooms = await response.json();
+        const rooms = await response.json();
 
-    const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '<div class="room-list"></div>'; // Add a container for the grid layout
-    const roomListDiv = resultsDiv.querySelector('.room-list');
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '<div class="room-list"></div>'; // Add a container for the grid layout
+        const roomListDiv = resultsDiv.querySelector('.room-list');
 
-    if (rooms.length > 0) {
-        rooms.forEach((room) => {
+        if (rooms.length > 0) {
+          rooms.forEach((room) => {
             const roomCard = `
                 <div class="room-card">
                     <img class="room-img" src="${room.imgURL}" alt="Room Image">
@@ -196,12 +196,11 @@ document.getElementById('searchForm').addEventListener('submit', async function 
                 </div>
             `;
             roomListDiv.innerHTML += roomCard; // Append each room card with modal
-        });
-    } else {
-        resultsDiv.innerHTML = '<div class="alert alert-danger custom-alert" role="alert" >No rooms available for the selected criteria.</div>';
-    }
-});
-
+          });
+        } else {
+          resultsDiv.innerHTML = '<div class="alert alert-danger custom-alert" role="alert" >No rooms available for the selected criteria.</div>';
+        }
+      });
     </script>
 
     <div id="results"></div>
@@ -212,14 +211,14 @@ document.getElementById('searchForm').addEventListener('submit', async function 
         margin-top: 35px;
       }
 
-      
+
       .room-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
       }
 
-     
+
       .room-card {
         background-color: white;
         padding: 20px;
@@ -228,7 +227,7 @@ document.getElementById('searchForm').addEventListener('submit', async function 
         text-align: center;
       }
 
-      
+
       .room-card .room-img {
         width: 100%;
         height: 150px;
@@ -236,7 +235,7 @@ document.getElementById('searchForm').addEventListener('submit', async function 
         border-radius: 8px;
       }
 
-      
+
       .room-card h3 {
         margin: 10px 0 5px;
         font-size: 1.2em;
@@ -247,22 +246,24 @@ document.getElementById('searchForm').addEventListener('submit', async function 
         color: #555;
       }
 
-      .Time{
-    padding-top: 10px;
-    text-align: center;  
-}
+      .Time {
+        padding-top: 10px;
+        text-align: center;
+      }
 
-.Timespan {   
-    color: #b393d3;
-    font-weight: bold;
-    padding-bottom: 20px; 
-}
+      .Timespan {
+        color: #b393d3;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
 
-.custom-alert {
-    max-width: 600px;
-    margin: 0 auto; /* Center horizontally */
-    text-align: center; /* Center text */
-}
+      .custom-alert {
+        max-width: 600px;
+        margin: 0 auto;
+        /* Center horizontally */
+        text-align: center;
+        /* Center text */
+      }
     </style>
 
 
