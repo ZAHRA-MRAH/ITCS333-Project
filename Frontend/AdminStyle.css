@@ -1,0 +1,156 @@
+.navbar-logo {
+    font-size: 20px;
+    font-weight: 600;
+    background-image: linear-gradient(to right, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    
+}
+.navbar-logo:hover{
+    background-image: linear-gradient(to right, #33245c, #bbb1d6);
+}
+.navbar{ 
+    display: flex;
+    justify-content:left; 
+    align-items: center;
+    padding: 10px 20px;
+} 
+.leftbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 20px; 
+    padding: 10px 20px;
+    color:#b393d3;
+}
+.navbutton1{
+    text-indent: 10px;
+}
+.navbutton1 a:link, a:visited{
+    color:#b393d3;
+    font-weight: 500;
+}
+.navbutton1 a:hover{
+    color:#8f75a8;
+    font-weight: 500;
+    transition-duration: 1s;
+    text-decoration: none;
+}
+.navbutton2 a:link, a:visited{
+    color:#b393d3;
+    font-weight: 500;
+    
+}
+.navbutton2 a:hover{
+    color:#8f75a8;
+    font-weight: 500;
+    transition-duration: 1s;
+    text-decoration: none;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    ; 
+}
+#main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap:20px;
+    padding:20px;
+    grid-template-areas: 
+    "box-left box-right"
+    "box-bottom box-bottom"
+    ; 
+}
+header{
+    grid-area: header;
+    background-color: 	whitesmoke;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius: 5px;
+}
+.box-left{
+    grid-area: box-left;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 20px ;
+}
+.box-right{
+    grid-area: box-right;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 20px ;
+}
+.box-bottom{
+    grid-area: box-bottom;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 20px ;
+}
+.box-left h2{
+    font-size:25px;
+    font-weight: 600;
+    padding-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+} 
+.box-left form .field input{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.box-left form .field input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none; 
+}
+.field textarea {
+    display: block; /* Ensures it takes up a new line */
+    width: 100%; /* Full width of the container */
+    font-size: 16px; /* Same size as other input fields */
+    padding: 10px; /* Adds spacing inside the field */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    height: 50px; /* Adjust height to your preference */
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */
+}
+.field #RoomType {
+    display: block; /* Ensures it takes up a new line */
+    width: 100%; /* Full width of the container */
+    font-size: 16px; /* Same size as other input fields */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    height: 40px; /* Adjust height to your preference */
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */
+}
+.btn{
+    height: 35px;
+    background: #553c9a;
+    border: 0;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+.btn:hover{
+    opacity: 0.82 !important; 
+}
+.submit{
+    width: 100%;
+}
+
+
+
+
