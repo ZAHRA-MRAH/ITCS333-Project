@@ -3,19 +3,23 @@
     require('Connection.php');
 
     // Check if the user is logged in
-    if (!isset($$_SESSION['user_id'])) {
-        header('location:login.php');
+    if (!isset($_SESSION['user_id'])) {
+        header('Location:login.php');
         exit();
     }
-    $user_id = $_SESSION['user_id'];
+    if ($_SERVER["REQUEST_METHOD"] !== "POST"){
+        header ("Location: AdminPanel.php");
+        exit();
+    }
+
     $message = ''; // Initialize variable to store error or success message
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $roomImgURL = null; 
+    try {
         // Retrieve room data
         $roomNumber = $_POST['RoomNumber'];
         $roomType = $_POST['RoomType'];
         $capacity = $_POST['Capacity'];
         $equipment = $_POST['Equipment'];
-        $roomImgURL = null;
 
         #handle img uplaod
         if (isset($_FILES['imgURL']) && $_FILES['imgURL']['error'] == UPLOAD_ERR_OK) {
@@ -25,7 +29,6 @@
             $file_type = $_FILES['imgURL']['type'];
             $file_size = $_FILES['imgURL']['size'];
     
-            try {
                 // Validate file type
                 if (!in_array($file_type, $allowed_types)) {
                     throw new Exception("Only JPG and PNG files are allowed.");
@@ -43,17 +46,23 @@
     
                 // Move the uploaded file to the target directory
                 if (move_uploaded_file($_FILES['imgURL']['tmp_name'], $target_file)) {
-                    $imgURL = "../RoomUpload/" . $unique_name;
+                    $roomImgURL = "../RoomUpload/" . $unique_name;
                 } else {
                     throw new Exception("Failed to upload the image.");
                 }
-            } catch (Exception $e) {
-                $message = "Error: " . $e->getMessage();
-            }
         }
-       
-        if (!$message) { // Only proceed with database insertion if no errors occurred during file upload
-            try {
+
+                // Check if the room number already exists
+            $checkQuery = "SELECT * FROM room WHERE RoomNumber = :roomNumber";
+            $checkStmt = $pdo->prepare($checkQuery);
+            $checkStmt->execute(['roomNumber' => $roomNumber]);
+            $existingRoom = $checkStmt->fetch();
+
+             if ($existingRoom) {
+                $message = "Room number already exists. Please choose a different room number.";
+                header("Location: AdminPanel.php?error=" . urlencode($message));
+                exit();
+            }
                 // Insert data into the `room` table
                 $query = "INSERT INTO room (RoomNumber, RoomType, Capacity, Equipment, imgURL) 
                           VALUES (:roomNumber, :roomType, :capacity, :equipment, :imgURL)";
@@ -63,13 +72,17 @@
                     'roomType' => $roomType,
                     'capacity' => $capacity,
                     'equipment' => $equipment,
-                    'imgURL' => $imgURL
+                    'imgURL' => $roomImgURL
                 ]);
-    
+
                 $message = "Room added successfully!";
-            } catch (Exception $e) {
-                $message = "Error: " . $e->getMessage();
-            }
-        }
+                header("Location: AdminPanel.php?success=" . urlencode($message));
+                exit(); // Stop further execution after successful insertion
+
+    } catch (Exception $e) {
+        $message = "Error: " . $e->getMessage();
+        header("Location: AdminPanel.php?error=" . urlencode($message));
+        exit();
     }
+    
 ?>
