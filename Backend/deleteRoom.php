@@ -11,7 +11,7 @@
         exit();
     }
     if (!isset($_POST['roomNumber']) || empty($_POST['roomNumber'])) {
-        header("Location: AdminPanel.php?error=NoRoomSelected");
+        header("Location: AdminPanel.php?deletError=NoRoomSelected");
         exit();
     }
     try {
@@ -39,12 +39,12 @@
         $stmt->execute([':roomID' => $roomID]);
         
         $pdo->commit();
-        header("Location: AdminPanel.php?success=RoomDeleted");
+        header("Location: AdminPanel.php?deleteSuccess=RoomDeleted");
         exit();   
     } catch(Exception $e){
         $pdo->rollBack;
         error_log("Error deleting room: " . $e->getMessage());
-        header("Location: AdminPanel.php?error=DeleteFailed");
+        header("Location: AdminPanel.php?deletError=DeleteFailed");
         exit();
         
     }
