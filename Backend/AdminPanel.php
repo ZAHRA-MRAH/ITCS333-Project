@@ -3,9 +3,12 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
             <link rel="stylesheet" href="../Frontend/AdminStyle.css">
             <script src="../Frontend/addRoom.js"> </script>
+            <script src="../Frontend/deleteRoom.js"></script>
             <title>Admin Panel</title>
         </head>
 <body>
@@ -30,12 +33,12 @@
                 <div class="box-left">
                     <h2>Add Room</h2>
                     <?php
-                        if (isset($_GET['success'])) {
-                            echo "<p class='alert alert-success'>" . htmlspecialchars($_GET['success']) . "</p>";
+                        if (isset($_GET['addSuccess'])) {
+                            echo "<p class='alert alert-success'>" . htmlspecialchars($_GET['addSuccess']) . "</p>";
                         }
 
-                        if (isset($_GET['error'])) {
-                            echo "<p class='alert alert-danger'>" . htmlspecialchars($_GET['error']) . "</p>";
+                        if (isset($_GET['addError'])) {
+                            echo "<p class='alert alert-danger'>" . htmlspecialchars($_GET['addError']) . "</p>";
                         }
                         ?>
                     <form id="roomForm" action="addRoom.php" method="POST" enctype="multipart/form-data">
@@ -82,36 +85,53 @@
                 <div class="box-bottom">
                     <h2>Delete Room</h2>
                 <?php
+                    if (isset($_GET['deletError'])) {
+                        echo "<div class='error-message'>{$_GET['deletError']}</div>";
+                    }
+                    
+                    if (isset($_GET['deleteSuccess'])) {
+                        echo "<div class='success-message'>{$_GET['deleteSuccess']}</div>";
+                    }
                     require("Connection.php");
                     $query = "SELECT * FROM `room` ";
                     $Roomstmt = $pdo->prepare($query);
                     $Roomstmt->execute();
                     if ($Roomstmt->rowCount()>0){
-                    echo "<table>
-                    <thead>
-                        <tr>
-                            <th>Room Number</th>
-                            <th>Room Type</th>
-                            <th>Capacity</th>
-                            <th>Equipment</th>
-                            <th>Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>";
-                    while ( $rooms = $Roomstmt->fetch(PDO::FETCH_ASSOC)){
-                        echo "<tr>
-                        <td>{$rooms['RoomNumber']}</td>
-                        <td>{$rooms['RoomType']}</td>
-                        <td>{$rooms['Capacity']}</td>
-                        <td>{$rooms['Equipment']}</td>
-                        <td><img src='{$rooms['imgURL']}' alt='Room Image' width='100'></td>
-                        </tr>";    
-                    }
-                    echo "</tbody></table>";    
+                        echo "<form id='deleteRoomForm' action='deleteRoom.php' method='post' enctype='multipart/form-data'>";
+                        echo "<label for='roomNumber'>Select Room:</label>";
+                        echo "<select name='roomNumber' id='roomNumber'>";
+                        
+                        while ($rooms = $Roomstmt->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<option value='{$rooms['RoomNumber']}'>
+                                    Room Number: {$rooms['RoomNumber']} | Type: {$rooms['RoomType']} | Capacity: {$rooms['Capacity']}
+                                  </option>";
+                        }
                     
-                    } else {echo "No rooms found";};
+                        echo "</select>";
+                        echo "<button type='submit' class='btn' id='deleteButton'>Submit</button>";
+                        echo "</form>";
+                    } else {
+                        echo "No rooms found. Please add rooms to appear here!";
+                    };
                 ?>
               </div>
+              <div class="modal" id="confirmModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmModalLabel">Confirm Deletion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete this room?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" id="confirmDelete" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </main>
 </body>
 </html>
