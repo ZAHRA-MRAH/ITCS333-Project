@@ -49,7 +49,7 @@ $result = $stmt->get_result();
     }
     ?>
 </div>
-<script src="js/cancelBooking.js"></script> <!-- Link to external JS file -->
+<script src="js/cancelBooking.js"></script>
 
 </body>
 </html>
