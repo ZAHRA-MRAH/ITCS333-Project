@@ -5,6 +5,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
             <link rel="stylesheet" href="../Frontend/AdminStyle.css">
+            <script src="../Frontend/addRoom.js"> </script>
             <title>Admin Panel</title>
         </head>
 <body>
@@ -28,7 +29,16 @@
 <main id="main">
                 <div class="box-left">
                     <h2>Add Room</h2>
-                    <form id="roomForm" action="" method="POST">
+                    <?php
+                        if (isset($_GET['success'])) {
+                            echo "<p class='alert alert-success'>" . htmlspecialchars($_GET['success']) . "</p>";
+                        }
+
+                        if (isset($_GET['error'])) {
+                            echo "<p class='alert alert-danger'>" . htmlspecialchars($_GET['error']) . "</p>";
+                        }
+                        ?>
+                    <form id="roomForm" action="addRoom.php" method="POST" enctype="multipart/form-data">
                         <div class="field input">
                             <label for="RoomNumber">Room Number:</label>
                             <input type="text" id="RoomNumber" name="RoomNumber" required>
@@ -36,9 +46,15 @@
                         </div>
                         <div class="field input">
                             <label for="RoomType">Room Type:</label>
-                            <input type="text" id="RoomType" name="RoomType" required>
+                            <select id="RoomType" name="RoomType" required>
+                            <option value=""></option>
+                                <option value="Classroom">Classroom</option>
+                                <option value="Computer Lab">Computer Lab</option>
+                                <option value="Meeting Room">Meeting Room</option>
+                            </select>
                             <span class="error-message"></span>
                         </div>
+
                         <div class="field input">
                             <label for="Capacity">Capacity:</label>
                             <input type="number" id="Capacity" name="Capacity" required>

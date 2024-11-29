@@ -15,6 +15,9 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 90vh;
+    width: 90%; /* Set width relative to the viewport */
+    max-width: 800px; /* Set a reasonable max-width */
+    margin: 0 auto;
 }
 .box{
     background: #fdfdfd;
