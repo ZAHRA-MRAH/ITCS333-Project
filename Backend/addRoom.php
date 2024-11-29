@@ -60,7 +60,7 @@
 
              if ($existingRoom) {
                 $message = "Room number already exists. Please choose a different room number.";
-                header("Location: AdminPanel.php?error=" . urlencode($message));
+                header("Location: AdminPanel.php?addError=" . urlencode($message));
                 exit();
             }
                 // Insert data into the `room` table
@@ -76,12 +76,12 @@
                 ]);
 
                 $message = "Room added successfully!";
-                header("Location: AdminPanel.php?success=" . urlencode($message));
+                header("Location: AdminPanel.php?addSuccess=" . urlencode($message));
                 exit(); // Stop further execution after successful insertion
 
     } catch (Exception $e) {
         $message = "Error: " . $e->getMessage();
-        header("Location: AdminPanel.php?error=" . urlencode($message));
+        header("Location: AdminPanel.php?addError=" . urlencode($message));
         exit();
     }
     
