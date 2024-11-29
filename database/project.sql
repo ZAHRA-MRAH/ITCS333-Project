@@ -5713,7 +5713,8 @@ INSERT INTO `room` (`RoomID`, `RoomNumber`, `RoomType`, `Capacity`, `Equipment`,
 (17, 'S40-2049', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
 (18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
 (19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200');
+(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
+(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../RoomUpload/6749d7e619e36.jpg');
 
 -- --------------------------------------------------------
 
