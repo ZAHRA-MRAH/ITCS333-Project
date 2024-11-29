@@ -93,8 +93,8 @@ header{
                 0 32px 64px -48px rgba(0,0,0,0.5);
 }
 .form-box{
-    width: 600px;
-    height: 300px;
+    width: 650px;
+    height: 800px;
     margin: 0px 10px;
 }
 .form-box header{
@@ -112,7 +112,7 @@ header{
     border-radius: 5px;
     font-size: 17px;
     border-color: transparent;
-    width: 150px;
+    width: 175px;
     height: 35px;
     color: #fdfdfd;
     font-weight:bold ;
@@ -160,3 +160,5 @@ header{
 /* #searchbtn :hover{
     
 } */
+ 
+

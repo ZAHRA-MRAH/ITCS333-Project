@@ -6,8 +6,19 @@
     background-color: #f4f4f4;
 }
 
-.display-rooms-sectionh1, h2, h3 {
-    color: #333;
+.display-rooms-section h1, h2, h3 {
+    color: #553c9a !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+hr {
+    margin-top: 50px;
+    
 }
 
 /* Room Browsing Page */
@@ -18,8 +29,8 @@
 }
 
 .display-rooms-section .room-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -42,6 +53,11 @@
 .display-rooms-section .room-card h3 {
     margin-top: 10px;
 }
+
+
+  
+  
+
 
 
 
