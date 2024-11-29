@@ -150,6 +150,16 @@ header{
 .submit{
     width: 100%;
 }
+#roomNumber{
+    display: block; /* Ensures it takes up a new line */
+    width: 100%; /* Full width of the container */
+    font-size: 16px; /* Same size as other input fields */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    height: 40px; /* Adjust height to your preference */
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */    
+}
+
 
 
 
