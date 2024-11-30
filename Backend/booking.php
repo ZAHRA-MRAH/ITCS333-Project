@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('header.php');
 // Retrieve room details from POST (displayRooms.php)
 $room_id = $_POST['RoomID'];
@@ -42,7 +43,7 @@ $equipment = $_POST['Equipment'];
 
     <!-- confirmation message -->
     <div id="confirmation-message" style="margin-top: 20px;"></div>
-    
+
     <!--Javascirpt to fetch timeslots from db and display booking confirmation or error to the user in the same page -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -135,8 +136,9 @@ $equipment = $_POST['Equipment'];
             
              // event listener for when confirm btn is clicked
             confirmBookingBtn.addEventListener("click", confirmBooking);
-        });
-    </script>
+        }); 
+    </script> 
+  
 </body>
 
 </html>
