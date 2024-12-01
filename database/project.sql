@@ -5696,27 +5696,27 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`RoomID`, `RoomNumber`, `RoomType`, `Capacity`, `Equipment`, `imgURL`) VALUES
-(1, 'S40-049', 'Classroom', 35, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class1.jpg'),
-(2, 'S40-051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab1.jpg'),
-(3, 'S40-056', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class2.jpg'),
-(4, 'S40-057', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class3.jpg'),
-(5, 'S40-058', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab2.jpg'),
-(6, 'S40-060', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class2.jpg'),
-(7, 'S40-1043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab3.jpg'),
-(8, 'S40-1045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab4.jpg'),
-(9, 'S40-1047', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class3.jpg'),
-(10, 'S40-1048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class1.jpg'),
-(11, 'S40-1050', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab5.jpg'),
-(12, 'S40-1052', 'Computer lab', 40, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab6.jpg'),
-(13, 'S40-2043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab7.jpg'),
-(14, 'S40-2045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab8.jpg'),
-(15, 'S40-2046', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class3.jpg'),
-(16, 'S40-2048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class2.jpg'),
-(17, 'S40-2049', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class3.jpg'),
-(18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'pictures/Class1.jpg'),
-(19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab5.jpg'),
-(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Lab8.jpg'),
-(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'pictures/Class2.jpg');
+(1, 'S40-049', 'Classroom', 35, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
+(2, 'S40-051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab1.jpg'),
+(3, 'S40-056', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class2.jpg'),
+(4, 'S40-057', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(5, 'S40-058', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab2.jpg'),
+(6, 'S40-060', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class2.jpg'),
+(7, 'S40-1043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab3.jpg'),
+(8, 'S40-1045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab4.jpg'),
+(9, 'S40-1047', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(10, 'S40-1048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
+(11, 'S40-1050', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab5.jpg'),
+(12, 'S40-1052', 'Computer lab', 40, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab6.jpg'),
+(13, 'S40-2043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab7.jpg'),
+(14, 'S40-2045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab8.jpg'),
+(15, 'S40-2046', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(16, 'S40-2048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class2.jpg'),
+(17, 'S40-2049', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
+(19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab5.jpg'),
+(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab8.jpg'),
+(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Class2.jpg');
 
 -- --------------------------------------------------------
 
