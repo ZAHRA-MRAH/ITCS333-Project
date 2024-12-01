@@ -4,20 +4,16 @@
     padding: 0;
     margin:0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 body{
     background: #fdfdfd;
-    font-family: 'Poppins', sans-serif;
-
 }
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 90vh;
-    width: 90%; /* Set width relative to the viewport */
-    max-width: 800px; /* Set a reasonable max-width */
-    margin: 0 auto;
 }
 .box{
     background: #fdfdfd;
@@ -30,7 +26,7 @@ body{
 
 }
 .form-box{
-    width: 675px;
+    width: 450px;
     margin: 0px 10px;
 }
 .form-box header{
@@ -66,7 +62,7 @@ body{
     padding: 0px 10px;
 }
 .btn:hover{
-    opacity: 0.82 !important; 
+    opacity: 0.82 ; 
 }
 .submit{
     width: 100%;

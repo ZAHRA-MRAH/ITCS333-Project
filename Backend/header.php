@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('Connection.php');
 
 // Check if the user is logged in
@@ -58,7 +57,7 @@ if (isset($_SESSION['user_id'])) {
         </div>
 
         <div class="navbutton2">
-          <a href="#ViewBooking" id="navlink">View Booking</a>
+          <a href="viewBookings.php" id="navlink">View Booking</a>
 
         </div>
 

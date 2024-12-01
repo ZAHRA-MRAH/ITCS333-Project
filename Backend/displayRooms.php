@@ -37,8 +37,10 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="display-rooms-section">
+        <h1 style="text-align : center; margin-top: 200px; color: #553c9a;"> Browse Rooms</h1>
         <div class="room-container">
-            <h1>Classrooms</h1>
+            <hr>
+            <h2>Classrooms</h2>
             <div class="room-list">
                 <?php foreach ($rooms as $room) { ?>
                     <div class="room-card">
@@ -96,7 +98,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <div class="room-container">
-            <h1>Computer Labs</h1>
+            <h2>Computer Labs</h2>
             <div class="room-list">
                 <?php foreach ($labs as $lab) { ?>
                     <div class="room-card">
