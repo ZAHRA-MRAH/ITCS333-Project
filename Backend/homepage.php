@@ -44,6 +44,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="../Frontend/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  
 </head>
 
 <body>
@@ -64,7 +65,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <div class="navbutton2">
-          <a href="#ViewBooking" id="navlink">View Booking</a>
+          <a href="viewBookings.php" id="navlink">View Booking</a>
 
         </div>
 

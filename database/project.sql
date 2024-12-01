@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2024 at 11:08 PM
+-- Generation Time: Nov 30, 2024 at 04:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5670,9 +5670,11 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`BookingID`, `userID`, `RoomID`, `BookingDate`, `StartTime`, `EndTime`, `Status`, `BookingTime`) VALUES
-(15, 3, 1, '2024-11-29', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 23:55:29'),
+(15, 3, 1, '2024-11-29', '08:00:00', '10:00:00', 'Cancelled', '2024-11-28 23:55:29'),
 (16, 5, 2, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 21:58:04'),
-(19, 3, 1, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-29 00:10:51');
+(19, 3, 1, '2024-11-30', '08:00:00', '10:00:00', 'Cancelled', '2024-11-29 00:10:51'),
+(20, 3, 3, '2024-12-06', '08:00:00', '10:00:00', 'Confirmed', '2024-11-30 18:23:37'),
+(21, 3, 3, '2024-11-28', '08:00:00', '10:00:00', 'Confirmed', '2024-11-30 18:24:04');
 
 -- --------------------------------------------------------
 
@@ -5804,13 +5806,13 @@ ALTER TABLE `availability`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
