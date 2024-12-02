@@ -1,6 +1,6 @@
-header{
-    background-color: 	whitesmoke;
-    border-bottom-right-radius:5px;
+header {
+    background-color: whitesmoke;
+    border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
@@ -12,51 +12,56 @@ header{
     color: transparent;
     background-clip: text;
     text-decoration: none;
-    
+
 }
 
-.navbar-logo:hover{
+.navbar-logo:hover {
     background-image: linear-gradient(to right, #33245c, #bbb1d6);
     text-decoration: none !important;
 }
-.navbar{ 
+
+.navbar {
     display: flex;
-    justify-content:left; 
+    justify-content: left;
     align-items: center;
     padding: 10px 20px;
-} 
+}
 
 .leftbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    gap: 20px; 
+    align-items: center;
+    gap: 20px;
     padding: 10px 20px;
-    color:#b393d3;
+    color: #b393d3;
 }
 
-.navbutton1{
+.navbutton1 {
     text-indent: 10px;
 }
 
-.navbutton1 a:link, a:visited{
-    color:#b393d3;
+.navbutton1 a:link,
+a:visited {
+    color: #b393d3;
     font-weight: 500;
 }
-.navbutton1 a:hover{
-    color:#8f75a8;
+
+.navbutton1 a:hover {
+    color: #8f75a8;
     font-weight: 500;
     transition-duration: 1s;
     text-decoration: none;
 }
 
-.navbutton2 a:link, a:visited{
-    color:#b393d3;
+.navbutton2 a:link,
+a:visited {
+    color: #b393d3;
     font-weight: 500;
-    
+
 }
-.navbutton2 a:hover{
-    color:#8f75a8;
+
+.navbutton2 a:hover {
+    color: #8f75a8;
     font-weight: 500;
     transition-duration: 1s;
     text-decoration: none;
@@ -69,42 +74,45 @@ header{
 }
 
 
-.profile img{
-    width: 45px; 
+.profile img {
+    width: 45px;
     height: 45px;
     border-radius: 50%;
 }
+
 /* Nav Bar Styling end -----------Home Page Styling */
-#welcome-messege{
+#welcome-messege {
     text-indent: 30px;
     background-image: linear-gradient(to right, #b393d3, #553c9a);
     color: transparent;
     background-clip: text;
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.box{
+.box {
     background: #fdfdfd;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 25px 25px;
     border-radius: 20px;
-    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-                0 32px 64px -48px rgba(0,0,0,0.5);
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
-.form-box{
+
+.form-box {
     width: 650px;
     height: 400px;
     margin: 0px 10px;
 }
-.form-box header{
+
+.form-box header {
     text-align: center;
     background-color: #fdfdfd;
     font-size: 25px;
@@ -113,7 +121,7 @@ header{
     margin-bottom: 10px;
 }
 
-.form-select{
+.form-select {
     align-items: center;
     background-color: #b393d3;
     border-radius: 5px;
@@ -122,37 +130,39 @@ header{
     width: 175px;
     height: 35px;
     color: #fdfdfd;
-    font-weight:bold ;
+    font-weight: bold;
 }
-.form-select option{
+
+.form-select option {
     text-align: center;
     background-color: #fdfdfd;
     color: #b393d3;
 }
 
-.Date{
+.Date {
     padding-top: 10px;
     text-align: center;
 }
-.Datespan{
-    
+
+.Datespan {
+
     color: #b393d3;
     font-weight: bold;
     padding-bottom: 20px;
 }
 
-.Date input{
+.Date input {
     cursor: pointer;
     background-color: #fdfdfd;
-    border-radius: 4px ;
-    border-color:gainsboro ;
-    color:rgb(83, 81, 81);
+    border-radius: 4px;
+    border-color: gainsboro;
+    color: rgb(83, 81, 81);
     font-weight: 300;
-    
+
 }
 
-#searchbtn{
-    margin-top: 40px ;
+#searchbtn {
+    margin-top: 40px;
     background-color: #b393d3;
     border-radius: 5px;
     font-size: 17px;
@@ -161,11 +171,9 @@ header{
     cursor: pointer;
     height: 40px;
     color: #fdfdfd;
-    font-weight:bold ;
+    font-weight: bold;
 }
 
 /* #searchbtn :hover{
     
 } */
- 
-

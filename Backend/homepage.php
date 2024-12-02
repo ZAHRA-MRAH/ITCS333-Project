@@ -211,4 +211,8 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 
+<?php 
+require('footer.php')
+?>
+
 </html>
