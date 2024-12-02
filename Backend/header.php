@@ -37,6 +37,7 @@ if (isset($_SESSION['user_id'])) {
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -53,16 +54,16 @@ if (isset($_SESSION['user_id'])) {
       <nav class="leftbar">
 
         <div class="navbutton1">
-          <a href="homepage.php" id="navlink">Home</a>
+          <a href="homepage.php" id="navlink" class="nav-linkk ">Home</a>
         </div>
 
         <div class="navbutton2">
-          <a href="viewBookings.php" id="navlink">View Booking</a>
+          <a href="viewBookings.php" id="navlink" class="nav-linkk ">View Booking</a>
 
         </div>
 
         <div class="navbutton2">
-          <a href="profile.php" id="navlink">Profile</a>
+          <a href="profile.php" id="navlink" class="nav-linkk ">Profile</a>
 
         </div>
 
@@ -79,3 +80,14 @@ if (isset($_SESSION['user_id'])) {
       </nav>
     </nav>
   </header>
+  <script>
+    document.querySelectorAll('.nav-linkk').forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
+
+</script>
+
+
+</body>
