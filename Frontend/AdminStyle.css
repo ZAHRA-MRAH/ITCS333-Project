@@ -4,7 +4,7 @@
     background-image: linear-gradient(to right, #553c9a, #b393d3);
     color: transparent;
     background-clip: text;
-    text-decoration: none;
+    text-decoration: none !important;
     
 }
 .navbar-logo:hover{
@@ -24,8 +24,15 @@
     padding: 10px 20px;
     color:#b393d3;
 }
+
+#navlink {
+    text-decoration: none;
+}
+
+
 .navbutton1{
     text-indent: 10px;
+   
 }
 .navbutton1 a:link, a:visited{
     color:#b393d3;
@@ -36,6 +43,11 @@
     font-weight: 500;
     transition-duration: 1s;
     text-decoration: none;
+}
+
+.navbutton2{
+    text-indent: 10px;
+    
 }
 .navbutton2 a:link, a:visited{
     color:#b393d3;
@@ -48,6 +60,13 @@
     transition-duration: 1s;
     text-decoration: none;
 }
+
+.nav-link.active {
+    font-weight: bold;
+    color: #33245c;
+
+}
+
 body{
     display: grid;
     grid-template-columns: 1fr;
