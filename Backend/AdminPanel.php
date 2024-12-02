@@ -1,3 +1,14 @@
+<?php 
+require('AdminHeader.php');
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+  header("Location: login.php");
+  exit;
+}
+
+?>
 <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -12,23 +23,7 @@
             <title>Admin Panel</title>
         </head>
 <body>
-<header>
 
-<nav class="navbar">
-    <a class="navbar-logo" href="#">
-        <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
-        UOB IT College Room Booking System
-    </a>
-    <nav class="leftbar">
-        <div class="navbutton1">
-        <a href="#Home" id="navlink">Home</a>
-        </div>
-        <div class="navbutton2">
-        <a href="logout.php" id="navlink">log out</a>
-        </div>
-    </nav>
-</nav>
-</header>
 <main id="main">
                 <div class="box-left">
                     <h2>Add Room</h2>
@@ -110,7 +105,7 @@
                         }
                     
                         echo "</select>";
-                        echo "<button type='submit' class='btn' id='deleteButton'>Submit</button>";
+                        echo "<button type='submit' class='btn' id='deleteButton'>Delete</button>";
                         echo "</form>";
                     } else {
                         echo "No rooms found. Please add rooms to appear here!";
