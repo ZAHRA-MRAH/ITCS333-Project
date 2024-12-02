@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 04:34 PM
+-- Generation Time: Dec 02, 2024 at 10:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5646,7 +5646,9 @@ INSERT INTO `availability` (`AvailabilityID`, `RoomID`, `Date`, `StartTime`, `En
 (8020, 17, '2025-02-27', '14:00:00', '16:00:00'),
 (8021, 18, '2025-02-27', '14:00:00', '16:00:00'),
 (8022, 19, '2025-02-27', '14:00:00', '16:00:00'),
-(8023, 20, '2025-02-27', '14:00:00', '16:00:00');
+(8023, 20, '2025-02-27', '14:00:00', '16:00:00'),
+(8213, 24, '2024-12-04', '08:00:00', '09:00:00'),
+(8217, 24, '2024-12-03', '08:00:00', '09:00:00');
 
 -- --------------------------------------------------------
 
@@ -5716,7 +5718,8 @@ INSERT INTO `room` (`RoomID`, `RoomNumber`, `RoomType`, `Capacity`, `Equipment`,
 (18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
 (19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab5.jpg'),
 (20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab8.jpg'),
-(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Class2.jpg');
+(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Class2.jpg'),
+(24, 'S40-032', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard', '../RoomUpload/674de8635bb85.jpg');
 
 -- --------------------------------------------------------
 
@@ -5800,7 +5803,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `availability`
 --
 ALTER TABLE `availability`
-  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8211;
+  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8219;
 
 --
 -- AUTO_INCREMENT for table `booking`
@@ -5812,7 +5815,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
