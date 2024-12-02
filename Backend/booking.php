@@ -48,6 +48,50 @@ $equipment = $_POST['Equipment'];
     <!-- confirmation message -->
     <div id="confirmation-message" style="margin-top: 20px;"></div>
 
+    <style>
+          
+
+
+        h1 {
+            font-size: 24px;
+            color: #553c9a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+        
+            color: #553c9a;
+            margin-bottom: 5px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #553c9a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+        
+            color: #553c9a;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 30%;
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+</style>
+
+     
+
+       
+        
+    
+
     <!--Javascirpt to fetch timeslots from db and display booking confirmation or error to the user in the same page -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
