@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require('AdminHeader.php');
     require('Connection.php');
 
     // Check if the user is logged in

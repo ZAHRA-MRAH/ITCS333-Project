@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('AdminHeader.php');
 require('Connection.php');
 
 // Check if the user is logged in
@@ -19,20 +20,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>Update Room</title>
 </head>
 <body>
-<header>
-    <nav class="navbar">
-        <a class="navbar-logo" href="AdminPanel.php">
-            <img src="../pictures/uob-logo.svg" width="40" height="40" alt="">
-            UOB IT College Room Booking System
-        </a>
-        <div class="leftbar">
-            <a href="AdminPanel.php" id="navlink">Add Room</a>
-            <a href="deleteRoom.php" id="navlink">Delete Room</a>
-            <a href="UpdateRoom.php" id="navlink">Update Room</a>
-            <a href="logout.php" id="navlink">Log Out</a>
-        </div>
-    </nav>
-</header>
+
 <main id="main">
     <div class="box">
         <h2>Update Room</h2>
