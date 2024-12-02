@@ -60,14 +60,11 @@ body{
 #main{
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto;
     gap:20px;
     padding:20px;
-    grid-template-areas: 
-    "box-left box-right"
-    "box-bottom box-bottom"
-    ; 
+    grid-template-areas: "box";
 }
 header{
     grid-area: header;
@@ -75,36 +72,25 @@ header{
     border-bottom-right-radius:5px;
     border-bottom-left-radius: 5px;
 }
-.box-left{
-    grid-area: box-left;
-    background: #fdfdfd;
+.box{
+    grid-area: box;
+    background: whitesmoke;
+    
     padding: 20px;
     border-radius: 20px ;
 }
-.box-right{
-    grid-area: box-right;
-    background: #fdfdfd;
-    padding: 20px;
-    border-radius: 20px ;
-}
-.box-bottom{
-    grid-area: box-bottom;
-    background: #fdfdfd;
-    padding: 20px;
-    border-radius: 20px ;
-}
-.box-left h2{
+.box h2{
     font-size:25px;
     font-weight: 600;
     padding-bottom: 1px solid #e6e6e6;
     margin-bottom: 10px;
 } 
-.box-left form .field input{
+.box form .field input{
     display: flex;
     margin-bottom: 10px;
     flex-direction: column;
 }
-.box-left form .field input{
+.box form .field input{
     height: 40px;
     width: 100%;
     font-size: 16px;
@@ -159,6 +145,21 @@ header{
     height: 40px; /* Adjust height to your preference */
     box-sizing: border-box; /* Ensures padding doesn’t increase width */    
 }
+.error-message {
+    color: #d9534f; /* Red color for errors */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Success message styling */
+.success-message {
+    color: #5cb85c; /* Green color for success */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
 
 
 
