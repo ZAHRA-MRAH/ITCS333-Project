@@ -2,9 +2,7 @@
 session_start();
 require('header.php');
 require('Connection.php');
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+
 
 
 // Check if the user is logged in

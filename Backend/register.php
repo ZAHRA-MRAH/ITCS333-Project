@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="pictures\uob-logo.svg">
-    <link rel="stylesheet" href="../Frontend/style.css">
+    <link rel="stylesheet" href="../Frontend/profilestyle.css">
     <script defer src="../Frontend/RegValidation.js"></script>
     <title>Register</title>
 </head>
