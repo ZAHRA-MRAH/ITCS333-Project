@@ -1,6 +1,6 @@
-header{
-    background-color: 	whitesmoke;
-    border-bottom-right-radius:5px;
+header {
+    background-color: whitesmoke;
+    border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
@@ -20,7 +20,7 @@ header{
     color: transparent;
     background-clip: text;
     text-decoration: none;
-    
+
 }
 
 .navbar-logo:hover{
@@ -65,6 +65,9 @@ header{
     text-decoration: none;
 }
 
+.nav-linkk.active {
+    font-weight: bold;
+    color: #33245c;
 
 .profile {
     position: relative; 
@@ -120,29 +123,31 @@ header{
     background-clip: text;
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.box{
+.box {
     background: #fdfdfd;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 25px 25px;
     border-radius: 20px;
-    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-                0 32px 64px -48px rgba(0,0,0,0.5);
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
-.form-box{
+
+.form-box {
     width: 650px;
     height: 370px;
     margin: 0px 10px;
 }
-.form-box header{
+
+.form-box header {
     text-align: center;
     background-color: #fdfdfd;
     font-size: 25px;
@@ -162,7 +167,6 @@ header{
     height: 35px;
     color: #fdfdfd;
     font-weight: bold;
-    text-align: center;
 }
 
 .form-select option {
@@ -172,7 +176,9 @@ header{
 }
 
 
-.Date{
+
+.Date {
+    padding-top: 10px;
     text-align: center;
     margin: 10px 0;
 }
@@ -206,7 +212,6 @@ header{
     cursor: pointer;
     height: 40px;
     color: #fdfdfd;
-    font-weight:bold ;
+    font-weight: bold;
 }
-
 

@@ -35,7 +35,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 <body>
-   
+
     <div class="display-rooms-section">
         <h1 style="text-align : left; margin-top: 30px; color: #553c9a; text-indent: 20px; "> Browse Rooms</h1>
         <div class="room-container">

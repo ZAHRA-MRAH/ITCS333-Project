@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2024 at 11:08 PM
+-- Generation Time: Dec 02, 2024 at 10:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5646,7 +5646,9 @@ INSERT INTO `availability` (`AvailabilityID`, `RoomID`, `Date`, `StartTime`, `En
 (8020, 17, '2025-02-27', '14:00:00', '16:00:00'),
 (8021, 18, '2025-02-27', '14:00:00', '16:00:00'),
 (8022, 19, '2025-02-27', '14:00:00', '16:00:00'),
-(8023, 20, '2025-02-27', '14:00:00', '16:00:00');
+(8023, 20, '2025-02-27', '14:00:00', '16:00:00'),
+(8213, 24, '2024-12-04', '08:00:00', '09:00:00'),
+(8217, 24, '2024-12-03', '08:00:00', '09:00:00');
 
 -- --------------------------------------------------------
 
@@ -5670,9 +5672,11 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`BookingID`, `userID`, `RoomID`, `BookingDate`, `StartTime`, `EndTime`, `Status`, `BookingTime`) VALUES
-(15, 3, 1, '2024-11-29', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 23:55:29'),
+(15, 3, 1, '2024-11-29', '08:00:00', '10:00:00', 'Cancelled', '2024-11-28 23:55:29'),
 (16, 5, 2, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 21:58:04'),
-(19, 3, 1, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-29 00:10:51');
+(19, 3, 1, '2024-11-30', '08:00:00', '10:00:00', 'Cancelled', '2024-11-29 00:10:51'),
+(20, 3, 3, '2024-12-06', '08:00:00', '10:00:00', 'Confirmed', '2024-11-30 18:23:37'),
+(21, 3, 3, '2024-11-28', '08:00:00', '10:00:00', 'Confirmed', '2024-11-30 18:24:04');
 
 -- --------------------------------------------------------
 
@@ -5694,27 +5698,28 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`RoomID`, `RoomNumber`, `RoomType`, `Capacity`, `Equipment`, `imgURL`) VALUES
-(1, 'S40-049', 'Classroom', 35, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(2, 'S40-051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(3, 'S40-056', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(4, 'S40-057', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(5, 'S40-058', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(6, 'S40-060', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(7, 'S40-1043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200\r\n'),
-(8, 'S40-1045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(9, 'S40-1047', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(10, 'S40-1048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(11, 'S40-1050', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(12, 'S40-1052', 'Computer lab', 40, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(13, 'S40-2043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(14, 'S40-2045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(15, 'S40-2046', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(16, 'S40-2048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(17, 'S40-2049', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', 'https://placehold.co/200x200'),
-(19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', 'https://placehold.co/200x200'),
-(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../RoomUpload/6749d7e619e36.jpg');
+(1, 'S40-049', 'Classroom', 35, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
+(2, 'S40-051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab1.jpg'),
+(3, 'S40-056', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class2.jpg'),
+(4, 'S40-057', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(5, 'S40-058', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab2.jpg'),
+(6, 'S40-060', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class2.jpg'),
+(7, 'S40-1043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab3.jpg'),
+(8, 'S40-1045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab4.jpg'),
+(9, 'S40-1047', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(10, 'S40-1048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
+(11, 'S40-1050', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab5.jpg'),
+(12, 'S40-1052', 'Computer lab', 40, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab6.jpg'),
+(13, 'S40-2043', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab7.jpg'),
+(14, 'S40-2045', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab8.jpg'),
+(15, 'S40-2046', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(16, 'S40-2048', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class2.jpg'),
+(17, 'S40-2049', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class3.jpg'),
+(18, 'S40-2050', 'Classroom', 40, 'Multimedia Projector\r\nWhiteboard', '../pictures/Class1.jpg'),
+(19, 'S40-2051', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab5.jpg'),
+(20, 'S40-2052', 'Computer lab', 25, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Lab8.jpg'),
+(23, 'S40-055', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard\r\nComputers', '../pictures/Class2.jpg'),
+(24, 'S40-032', 'Classroom', 30, 'Multimedia Projector\r\nWhiteboard', '../RoomUpload/674de8635bb85.jpg');
 
 -- --------------------------------------------------------
 
@@ -5798,19 +5803,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `availability`
 --
 ALTER TABLE `availability`
-  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8211;
+  MODIFY `AvailabilityID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8219;
 
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`

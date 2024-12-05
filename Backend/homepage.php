@@ -67,7 +67,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <div class="navbutton2">
-          <a href="#ViewBooking" id="navlink">View Booking</a>
+          <a href="viewBookings.php" id="navlink">View Booking</a>
 
         </div>
         </div>
@@ -211,5 +211,9 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
 </body>
+
+<?php 
+require('footer.php')
+?>
 
 </html>

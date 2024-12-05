@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('Connection.php');
 
 // Check if the user is logged in
@@ -54,11 +53,11 @@ if (isset($_SESSION['user_id'])) {
   <nav class="leftbar">
 
     <div class="navbutton1">
-      <a href="homepage.php" id="navlink">Home</a>
+      <a href="homepage.php" id="navlink" class="nav-linkk">Home</a>
     </div>
 
     <div class="navbutton2">
-      <a href="#ViewBooking" id="navlink">View Booking</a>
+      <a href="#ViewBooking" id="navlink" class="nav-linkk">View Booking</a>
 
     </div>
     </div>
@@ -79,3 +78,12 @@ if (isset($_SESSION['user_id'])) {
 
 </nav>
   </header>
+  <script>
+    document.querySelectorAll('.nav-linkk').forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
+
+</script>
+</body>

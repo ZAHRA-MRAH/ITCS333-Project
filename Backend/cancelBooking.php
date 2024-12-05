@@ -1,22 +1,24 @@
 <?php
 session_start();
-require('Connection.php'); // Ensure database connection
+require('Connection.php');
 
-// Check if booking_id is provided
-if (isset($_POST['booking_id'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id'])) {
     $booking_id = $_POST['booking_id'];
-    
-    // Prepare SQL to cancel the booking
-    $sql = "UPDATE bookings SET status = 'canceled' WHERE booking_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $booking_id);
-    
-    if ($stmt->execute()) {
-        echo "Booking canceled successfully.";
-    } else {
-        echo "Error: Unable to cancel the booking.";
+
+    try {
+        // update booking status to 'Cancelled'
+        $query = "UPDATE booking SET Status = 'Cancelled' WHERE BookingID = :booking_id AND userID = :user_id";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':booking_id', $booking_id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+        $stmt->execute();
+
+        $_SESSION['success_message'] = "Booking cancelled successfully!";
+    } catch (Exception $e) {
+        $_SESSION['error_message'] = "Failed to cancel booking: " . $e->getMessage();
     }
-} else {
-    echo "No booking ID provided.";
+
+    header("Location: viewBookings.php");
+    exit;
 }
 ?>
