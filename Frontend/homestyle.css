@@ -4,19 +4,11 @@ header {
     border-bottom-left-radius: 5px;
 }
 
-.navbar{ 
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-} 
 
-
-.navbar-logo:visited, :link{
-    display: flex;
-    align-items: center;
+.navbar-logo {
     font-size: 20px;
     font-weight: 600;
-    background-image: linear-gradient(to right, #4f4da7, #b393d3);
+    background-image: linear-gradient(to right, #553c9a, #b393d3);
     color: transparent;
     background-clip: text;
     text-decoration: none;
@@ -24,101 +16,61 @@ header {
 }
 
 .navbar-logo:hover{
-    color: #4f4da7 !important;
-    text-decoration: none;
+    background-image: linear-gradient(to right, #33245c, #bbb1d6);
 }
+.navbar{ 
+    display: flex;
+    justify-content:left; 
+    align-items: center;
+    padding: 10px 20px;
+} 
 
 .leftbar {
     display: flex;
-    flex-grow: 1;
-    align-items: center;
-    gap: 15px; 
-    padding: 8px;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 20px; 
+    padding: 10px 20px;
     color:#b393d3;
 }
 
+.navbutton1{
+    text-indent: 10px;
+}
 
 .navbutton1 a:link, a:visited{
     color:#b393d3;
-    font-size:16px ;
-    font-weight: normal;
-    text-decoration: none;
-
+    font-weight: 500;
 }
 .navbutton1 a:hover{
     color:#8f75a8;
+    font-weight: 500;
     transition-duration: 1s;
     text-decoration: none;
 }
 
 .navbutton2 a:link, a:visited{
     color:#b393d3;
-    font-size:16px ;
-    font-weight: normal;
-    text-decoration: none;
+    font-weight: 500;
     
 }
 .navbutton2 a:hover{
     color:#8f75a8;
-   
+    font-weight: 500;
     transition-duration: 1s;
     text-decoration: none;
 }
 
-.nav-linkk.active {
-    font-weight: bold;
-    color: #33245c;
 
-.profile {
-    position: relative; 
-
-}
-
-.profile img {
-    width: 45px;
+.profile img{
+    width: 45px; 
     height: 45px;
     border-radius: 50%;
-    margin-right: 5px;
-    background-color: transparent;
-    cursor: pointer;
 }
-
-.dropdown-menu {
-    position: absolute; 
-    top: 100%;
-    left:-1000px;
-    z-index: 1000; 
-    background-color: white;
-    border: 1px solid #ddd; 
-    border-radius: 6px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    margin: 13px;
-    padding: 2px;
-    min-width: 150px; 
-}
-
-
-
-.dropdown-menu a {
-    display: block; 
-    padding: 10px 15px; 
-    color: #b393d3; 
-    text-decoration: none; 
-    font-weight: normal;
-}
-
-.dropdown-menu a:hover {
-    background-color: #f5f5f5; /* Light gray background on hover */
-    color: #8f75a8; /* Change text color */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
 /* Nav Bar Styling end -----------Home Page Styling */
 #welcome-messege{
-    align-items: center;
     text-indent: 30px;
-    background-image: linear-gradient(to right, #b393d3, #4f4da7);
+    background-image: linear-gradient(to right, #b393d3, #553c9a);
     color: transparent;
     background-clip: text;
 }
@@ -143,7 +95,7 @@ header {
 
 .form-box {
     width: 650px;
-    height: 370px;
+    height: 800px;
     margin: 0px 10px;
 }
 
@@ -156,62 +108,63 @@ header {
     margin-bottom: 10px;
 }
 
-.form-select {
-    display: block; 
-    margin: 0 auto; 
+.form-select{
+    align-items: center;
     background-color: #b393d3;
     border-radius: 5px;
     font-size: 17px;
-    border: none;
-    width: 175px; 
+    border-color: transparent;
+    width: 175px;
     height: 35px;
     color: #fdfdfd;
     font-weight: bold;
+    font-weight:bold ;
 }
-
-.form-select option {
+.form-select option{
     text-align: center;
     background-color: #fdfdfd;
     color: #b393d3;
 }
 
 
-
 .Date {
     padding-top: 10px;
+.Date{
+    padding-top: 10px;
     text-align: center;
-    margin: 10px 0;
 }
 .Datespan{
-    font-family: Arial, sans-serif;
-    font-size: 18px;
+    
     color: #b393d3;
     font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.Date input{
+    cursor: pointer;
+    background-color: #fdfdfd;
+    border-radius: 4px ;
+    border-color:gainsboro ;
+    color:rgb(83, 81, 81);
+    font-weight: 300;
     
 }
 
-.Date input[type="date"] {
-    width: 200px;
- 
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    outline: none;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-
-}
-
 #searchbtn{
-    margin-top: 5px ;
+    margin-top: 40px ;
     background-color: #b393d3;
     border-radius: 5px;
     font-size: 17px;
     border-color: transparent;
-    width: 400px;
+    width: 200px;
     cursor: pointer;
     height: 40px;
     color: #fdfdfd;
     font-weight: bold;
 }
+
+/* #searchbtn :hover{
+    
+} */
+ 
 

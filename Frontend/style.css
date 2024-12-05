@@ -5,7 +5,6 @@
     margin:0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    
 }
 body{
     background: #fdfdfd;
@@ -52,7 +51,7 @@ body{
 }
 .btn{
     height: 35px;
-    background: #b393d3;
+    background: #553c9a;
     border: 0;
     border-radius: 5px;
     color:#fff;
@@ -63,28 +62,16 @@ body{
     padding: 0px 10px;
 }
 .btn:hover{
-    background-color: #8f75a8;
-    color: #fff;
     opacity: 0.82 ; 
 }
 .submit{
     width: 100%;
 }
-.links a{
-    color: #b393d3;
-    text-decoration-color:#b393d3 ;
+.links{
     margin-bottom: 15px;
 }
 
-.links a:hover{
-    color: #8f75a8;
-    text-decoration-color:#8f75a8 ;
-    opacity: 0.82 ; 
-}
-
-
 header {
-    text-align: center;
     font-weight: bolder;
 }
 

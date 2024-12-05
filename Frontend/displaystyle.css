@@ -8,8 +8,6 @@
 
 .display-rooms-section h1, h2, h3 {
     color: #553c9a !important;
-    text-align: center;
-    padding: 20px;
 }
 
 h1 {
@@ -19,7 +17,7 @@ h1 {
 
 
 hr {
-    margin-top: 30px;
+    margin-top: 50px;
     
 }
 
@@ -27,7 +25,7 @@ hr {
 .display-rooms-section .room-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
 }
 
 .display-rooms-section .room-list {
@@ -57,20 +55,7 @@ hr {
 }
 
 
-.modal-body ul{
-    align-items: center;
-    list-style-type: none;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.modal-body li{
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-
+  
   
 
 

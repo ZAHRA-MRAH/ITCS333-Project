@@ -4,7 +4,6 @@ require('header.php');
 require('Connection.php');
 
 
-
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
