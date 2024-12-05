@@ -1,6 +1,10 @@
 <?php
 session_start();
 require('Connection.php');
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -25,6 +29,7 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Bookings</title>
+    <link rel="icon" type="image/x-icon" href="pictures\uob-logo.svg">
     <link rel="stylesheet" href="../Frontend/style.css">
 </head>
 <body>

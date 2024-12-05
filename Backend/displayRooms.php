@@ -37,7 +37,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
    
     <div class="display-rooms-section">
-        <h1 style="text-align : center; margin-top: 200px; color: #553c9a;"> Browse Rooms</h1>
+        <h1 style="text-align : left; margin-top: 30px; color: #553c9a; text-indent: 20px; "> Browse Rooms</h1>
         <div class="room-container">
             <hr>
             <h2>Classrooms</h2>
@@ -70,7 +70,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
                                             $equipment = explode("\n", $room['Equipment']);
                                             foreach ($equipment as $item) {
 
-                                                echo '<li>' . trim($item) . '</li>';
+                                                echo '<li>' . htmlspecialchars(trim($item)) . '</li>';
                                             }
                                             ?>
                                         </ul>
@@ -127,7 +127,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
                                             $equipment = explode("\n", $lab['Equipment']);
                                             foreach ($equipment as $item) {
 
-                                                echo '<li>' . trim($item) . '</li>';
+                                                echo '<li>' . htmlspecialchars(trim($item)) . '</li>';
                                             }
                                             ?>
                                         </ul>
@@ -169,6 +169,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
         .custom-close-color:hover {
             background-color: #c82333;
             cursor: pointer;
+            color: white !important;
         }
 
         /* Custom style for Book Room button */

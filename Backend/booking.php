@@ -13,33 +13,64 @@ $equipment = $_POST['Equipment'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking</title>
+    <link rel="icon" type="image/x-icon" href="..\pictures\uob-logo.svg">
+    <link rel="stylesheet" href="bookingStyle.css?v=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <title>Booking</title>
+    
 </head>
 
 <body>
     <h1>Book Room <?php echo htmlspecialchars($room_number); ?></h1>
-    <p>Capacity: <?php echo htmlspecialchars($capacity); ?></p>
-    <p>Equipment: <?php echo htmlspecialchars($equipment); ?></p>
+    <h2>Room Details</h2>
+    <div class="main-container">
+    <div class="left-container">
 
+        <div class="details-container">
+            <div class="capacity">
+                <img src="../pictures/people.png" alt="Capacity Icon" class="icon">
+                <p>Capacity: <?php echo htmlspecialchars($capacity); ?></p>
+            </div>
+
+            <div class="equipment">
+                <img src="../pictures/blackboard.png" alt="Equipment Icon" class="icon">
+                <p>Equipment: <?php echo htmlspecialchars($equipment); ?></p>
+            </div>
+        </div>
+ 
     <!-- Booking Form -->
-    <form id="booking-form">
-        <input type="hidden" name="room_id" id="room-id" value="<?php echo htmlspecialchars($room_id); ?>">
+     <div class="bookingform-container">
+        <form id="booking-form">
+            <input type="hidden" name="room_id" id="room-id" value="<?php echo htmlspecialchars($room_id); ?>">
 
-        <!-- Date Picker -->
-        <label for="booking-date">Select Date:</label>
-        <input type="date" name="date" id="booking-date" required>
+            <!-- Date Picker -->
+            <label for="booking-date" id="date-label">Select Date:</label>
+            <input type="date" name="date" id="booking-date" required><br>
 
-        <!-- Time Slots Dropdown -->
-        <label for="time-slot">Select Time Slot:</label>
-        <select name="time_slot" id="time-slot" required>
-            <option value="" disabled selected>Select Time Slot</option>
-        </select>
+            <!-- Time Slots Dropdown -->
+            <label for="time-slot">Select Time Slot:</label> 
+            <select name="time_slot" id="time-slot" required> <br>
+                <option value="" disabled selected>Select Time Slot</option>
+            </select>
 
-        <!-- Submit Button -->
-        <button type="button" id="confirm-booking-btn" class="btn custom-book-button">Confirm Booking</button>
-    </form>
+            <!-- Submit Button -->
+            <button type="button" id="confirm-booking-btn" class="btn custom-book-button">Confirm Booking</button>
+        </form>
+    </div>
+    </div>
+     <div class="img-container">
+            <img src="https://placehold.co/500x400" alt="">
+            <p>Room Image</p>
+        </div>
+    </div>
 
+   
+
+   
     <!-- confirmation message -->
     <div id="confirmation-message" style="margin-top: 20px;"></div>
     
@@ -137,6 +168,154 @@ $equipment = $_POST['Equipment'];
             confirmBookingBtn.addEventListener("click", confirmBooking);
         });
     </script>
+    <style>
+
+    h1{
+        color: #553c9a;
+        text-indent: 2px;
+    }
+    h2{
+        color: #9B89CF;/*changelater*/
+        text-indent: 25px;
+    }
+
+    .main-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; 
+    }
+    .left-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 20px;
+    }
+    .details-container {
+        top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: fit-content;
+        width:99%;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        padding: 20px; 
+        margin: 20px auto; 
+        margin-left: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+    
+    .img-container{
+        position: relative;
+        top:0;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        padding: 20px; 
+        margin: 20px auto; 
+        margin-left: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
+
+    .bookingform-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        height: 200px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        padding: 20px; 
+        margin-left: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+    .capacity  {
+        display: flex; 
+        align-items: center; 
+        margin-right: 15px;
+    }
+    .equipment{
+        display: flex; 
+        align-items: center;
+        margin-top: 15px; 
+    }
+
+
+    .icon {
+        width: 24px; 
+        height: 24px;
+        margin-right: 10px; 
+    }
+
+
+    .capacity p, .equipment p {
+        color: #9B89CF;
+        margin: 0; 
+        font-size: 16px; 
+    }
+
+
+
+.booking-date{
+    text-align: center;
+    margin: 10px 0;
+}
+label{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #b393d3;
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
+
+.Date input[type="date"] {
+    width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+#time-slot{
+
+    background-color: #9B89CF;
+    border-radius: 5px;
+    font-size: 17px;
+    border: none;
+    width: 175px; 
+    height: 35px;
+    color: #fdfdfd;
+    /* font-weight: bold; */
+    text-align: center;
+}
+
+.custom-book-button{
+    position:absolute;
+    right: 20px;
+    bottom: 10px;
+    background-color: #9B89CF;
+    color:white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.custom-book-button:hover{
+    background-color: #b393d3;
+    color:white;
+}
+
+    </style>
 </body>
 
 </html>
