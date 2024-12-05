@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('Connection.php');
+require('header.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
@@ -48,44 +49,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-  <header>
 
-    <nav class="navbar">
-      <a class="navbar-logo" href="#">
-        <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
-        UOB IT College Room Booking System
-      </a>
-
-
-      <nav class="leftbar">
-
-        <div class="navbutton1">
-          <a href="homepage.php" id="navlink">Home</a>
-        </div>
-
-        <div class="navbutton2">
-          <a href="viewBookings.php" id="navlink">View Booking</a>
-
-        </div>
-
-        <div class="navbutton2">
-          <a href="profile.php" id="navlink">Profile</a>
-
-        </div>
-
-        <div class="navbutton2">
-          <a href="logout.php" id="navlink">log out</a>
-
-        </div>
-      </nav>
-
-      <nav class="rightbar">
-        <div class="profile">
-          <img src=<?php echo $profilePic ?> alt="Profile">
-        </div>
-      </nav>
-    </nav>
-  </header>
   <main>
     <h2 id="welcome-messege"><?php
                               try {
