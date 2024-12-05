@@ -12,7 +12,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="../Frontend/0d9fede1d1d18c210fd7046d7d0833ec9145bdc80d9fede1d1d18c210fd7046d7d0833ec9145bdc8style.css">
+    <link rel="stylesheet" href="../Frontend/style.css">
     <title>Login</title>
 </head>
 <body>

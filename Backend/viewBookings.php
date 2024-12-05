@@ -38,7 +38,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bookings</title>
     <link rel="icon" type="image/x-icon" href="pictures\uob-logo.svg">
-    <link rel="stylesheet" href="../Frontend/style.css">
+   
 </head>
 <body>
 

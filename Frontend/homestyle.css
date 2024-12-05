@@ -25,6 +25,12 @@ header {
     padding: 10px 20px;
 } 
 
+.nav-linkk.active {
+    font-weight: bold;
+    color: #33245c;
+}
+
+
 .leftbar {
     display: flex;
     justify-content: space-between;
@@ -95,7 +101,7 @@ header {
 
 .form-box {
     width: 650px;
-    height: 800px;
+    height: 400px;
     margin: 0px 10px;
 }
 
@@ -127,8 +133,7 @@ header {
 }
 
 
-.Date {
-    padding-top: 10px;
+
 .Date{
     padding-top: 10px;
     text-align: center;
