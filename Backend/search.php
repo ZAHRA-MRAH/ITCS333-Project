@@ -1,9 +1,12 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json');
     require('Connection.php');
+    
+ 
 
     $room_type = $_POST['room_type'];
-    $booking_date = $_POST['booking_date'];
+    $booking_date = $_POST['date'];
     $time_slot = $_POST['time_slot'];
 
     // Split the time slot into start_time and end_time
