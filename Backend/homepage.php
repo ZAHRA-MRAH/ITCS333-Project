@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('Connection.php');
+require('header.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
