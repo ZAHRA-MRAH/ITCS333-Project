@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Validate inputs before submitting the form
             if (validateInputs(e.target)) {
                 console.log("Update form is valid");
-                e.target.submit();
+                e.target.submit(); // Submit form if validation passes
             } else {
                 console.log("Update form validation failed");
             }
@@ -71,71 +71,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Validate all inputs dynamically
     function validateInputs(form) {
-        let isValid = false;
-
-        // Track if at least one field is updated
-        let isFieldUpdated = false;
+        let isValid = true;
 
         // Validate Room Type
         const newRoomType = form.querySelector('#newRoomType');
-        const originalRoomType = newRoomType.getAttribute('data-original');
-        const roomTypeValue = newRoomType.value;
-        if (roomTypeValue !== originalRoomType) {
-            isFieldUpdated = true;
-            if (!validateRoomType(roomTypeValue)) {
-                showError(newRoomType, "Please select a valid room type.");
-                isValid = false;
-            } else {
-                showSuccess(newRoomType);
-            }
+        if (!validateRoomType(newRoomType.value)) {
+            showError(newRoomType, "Please select a valid room type.");
+            isValid = false;
+        } else {
+            showSuccess(newRoomType);
         }
 
         // Validate Capacity
         const newCapacity = form.querySelector('#newCapacity');
-        const originalCapacity = newCapacity.getAttribute('data-original');
-        const capacityValue = newCapacity.value.trim();
-        if (capacityValue !== originalCapacity) {
-            isFieldUpdated = true;
-            if (!validateCapacity(capacityValue)) {
-                showError(newCapacity, "Capacity must be a positive number.");
-                isValid = false;
-            } else {
-                showSuccess(newCapacity);
-            }
+        if (!validateCapacity(newCapacity.value.trim())) {
+            showError(newCapacity, "Capacity must be a positive number.");
+            isValid = false;
+        } else {
+            showSuccess(newCapacity);
         }
 
         // Validate Equipment
         const newEquipment = form.querySelector('#newEquipment');
-        const originalEquipment = newEquipment.getAttribute('data-original');
-        const equipmentValue = newEquipment.value.trim();
-        if (equipmentValue !== originalEquipment) {
-            isFieldUpdated = true;
-            if (!validateEquipment(equipmentValue)) {
-                showError(newEquipment, "Equipment description cannot be empty.");
-                isValid = false;
-            } else {
-                showSuccess(newEquipment);
-            }
+        if (!validateEquipment(newEquipment.value.trim())) {
+            showError(newEquipment, "Equipment description cannot be empty.");
+            isValid = false;
+        } else {
+            showSuccess(newEquipment);
         }
 
-        // Validate Image Upload
+        // Validate Image Upload (optional)
         const newImgURL = form.querySelector('#newImgURL');
-        const imageValidationResult = validateImageUpload(newImgURL);
-        if (newImgURL.files.length > 0) {
-            isFieldUpdated = true;
-            if (!imageValidationResult.isValid) {
-                showError(newImgURL, imageValidationResult.message);
-                isValid = false;
-            } else {
-                showSuccess(newImgURL);
-            }
+        if (!validateImageUpload(newImgURL)) {
+            isValid = false;
         }
 
-        // Allow submission only if at least one field is updated
-        if (!isFieldUpdated) {
-            alert("Please update at least one field before submitting.");
-        }
-
-        return isFieldUpdated && isValid;
+        return isValid;
     }
 });
