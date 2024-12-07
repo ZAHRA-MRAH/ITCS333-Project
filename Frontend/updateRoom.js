@@ -51,12 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error("Error message container not found for input:", input);
         }
     }
-    
-    // Validate Room Type
-    function validateRoomType(type) {
-        const validRoomTypes = ['Classroom', 'Computer Lab', 'Meeting Room'];
-        return validRoomTypes.includes(type);
-    }
 
     // Validate Capacity
     function validateCapacity(cap) {
@@ -93,14 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateInputs(form) {
         let isValid = true;
 
-        // Validate Room Type
-        const newRoomType = form.querySelector('#newRoomType');
-        if (!validateRoomType(newRoomType.value)) {
-            showError(newRoomType, "Please select a valid room type.");
-            isValid = false;
-        } else {
-            showSuccess(newRoomType);
-        }
+       // No validation for Room Type because dropdown restricts invalid input
 
         // Validate Capacity
         const newCapacity = form.querySelector('#newCapacity');
