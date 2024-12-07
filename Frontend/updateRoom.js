@@ -109,8 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Validate Image Upload (optional)
         const newImgURL = form.querySelector('#newImgURL');
-        if (!validateImageUpload(newImgURL)) {
+        const imageValidationResult = validateImageUpload(newImgURL);
+        if (!imageValidationResult.isValid) {
+            showError(newImgURL, imageValidationResult.message);
             isValid = false;
+        } else {
+            showSuccess(newImgURL);
         }
 
         return isValid;
