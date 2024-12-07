@@ -43,7 +43,7 @@ if (!isset($_SESSION['user_id'])) {
 
             while ($room = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<option value='" . htmlspecialchars($room['RoomNumber']) . "'>
-                        Room Number: " . htmlspecialchars($room['RoomNumber']) . " | Type: " . htmlspecialchars($room['RoomType']) . "
+                        Room Number: " . htmlspecialchars($room['RoomNumber']) . "
                       </option>";
             }
             ?>
