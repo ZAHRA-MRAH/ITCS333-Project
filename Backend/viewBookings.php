@@ -3,6 +3,7 @@ session_start();
 require('header.php');
 require('Connection.php');
 
+
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
@@ -36,8 +37,10 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bookings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-OKnf1p5D6G9dEchSCNs8WimTnIbqlkAfj4HZYjQICJ3t0DxHkOU3qmhbnI5ZefQX" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-QF6Ir7NKN3Pjw1a+cbTR2MDSw8Tf4JESKLkpJrCRoc0hl3PlrD/QdxNvTj1yIpID" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="pictures\uob-logo.svg">
+   
+</head>
+<body>
 
 
     <style>
@@ -192,5 +195,9 @@ try {
         });
     </script>
 </body>
+
+<?php 
+require('footer.php')
+?>
 
 </html>

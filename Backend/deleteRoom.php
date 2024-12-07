@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('AdminHeader.php');
 require('Connection.php');
 
 // Check if the user is logged in
@@ -56,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,48 +66,67 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="../Frontend/deleteRoom.js"> </script>
     <title>Delete Room</title>
 </head>
+
 <body>
-<header>
-    <nav class="navbar">
-        <a class="navbar-logo" href="AdminPanel.php">
-            <img src="../pictures/uob-logo.svg" width="40" height="40" alt="">
-            UOB IT College Room Booking System
-        </a>
-        <div class="leftbar">
-            <a href="AdminPanel.php" id="navlink">Add Room</a>
-            <a href="deleteRoom.php" id="navlink">Delete Room</a>
-            <a href="updateRoom.php" id="navlink">Update Room</a>
-            <a href="logout.php" id="navlink">Log Out</a>
+
+    <main id="main">
+        <div class="box">
+            <h2>Delete Room</h2>
+            <?php
+            if (isset($_GET['deletError'])) {
+                echo "<div class='alert alert-danger'>" . htmlspecialchars($_GET['deletError']) . "</div>";
+            }
+            if (isset($_GET['deleteSuccess'])) {
+                echo "<div class='alert alert-success'>" . htmlspecialchars($_GET['deleteSuccess']) . "</div>";
+            }
+            ?>
+            <form id="deleteRoomForm" action="deleteRoom.php" method="post">
+                <label for="roomNumber">Select Room:</label>
+                <select name="roomNumber" id="roomNumber" required>
+                    <option value="">-- Select Room --</option>
+                    <?php
+                    $query = "SELECT * FROM room";
+                    $stmt = $pdo->prepare($query);
+                    $stmt->execute();
+                    while ($room = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<option value='{$room['RoomNumber']}'>Room Number: {$room['RoomNumber']} | Type: {$room['RoomType']}</option>";
+                    }
+                    ?>
+                </select>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete</button>
+            </form>
         </div>
-    </nav>
-</header>
-<main id="main">
-    <div class="box">
-        <h2>Delete Room</h2>
-        <?php
-        if (isset($_GET['deletError'])) {
-            echo "<div class='alert alert-danger'>" . htmlspecialchars($_GET['deletError']) . "</div>";
-        }
-        if (isset($_GET['deleteSuccess'])) {
-            echo "<div class='alert alert-success'>" . htmlspecialchars($_GET['deleteSuccess']) . "</div>";
-        }
-        ?>
-        <form id="deleteRoomForm" action="deleteRoom.php" method="post">
-            <label for="roomNumber">Select Room:</label>
-            <select name="roomNumber" id="roomNumber" required>
-                <option value="">-- Select Room --</option>
-                <?php
-                $query = "SELECT * FROM room";
-                $stmt = $pdo->prepare($query);
-                $stmt->execute();
-                while ($room = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<option value='{$room['RoomNumber']}'>Room Number: {$room['RoomNumber']} | Type: {$room['RoomType']}</option>";
-                }
-                ?>
-            </select>
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+    </main>
+
+    <!-- Confirmation bootstrap modal -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this room? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
     </div>
-</main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+            const deleteRoomForm = document.getElementById('deleteRoomForm');
+
+            confirmDeleteBtn.addEventListener('click', () => {
+                deleteRoomForm.submit();
+            });
+        });
+    </script>
 </body>
-</html>
+
+</html> 

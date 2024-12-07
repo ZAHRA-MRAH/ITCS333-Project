@@ -24,8 +24,15 @@
     padding: 10px 20px;
     color:#b393d3;
 }
+
+#navlink {
+    text-decoration: none;
+}
+
+
 .navbutton1{
     text-indent: 10px;
+   
 }
 .navbutton1 a:link, a:visited{
     color:#b393d3;
@@ -48,6 +55,13 @@
     transition-duration: 1s;
     text-decoration: none;
 }
+
+.nav-link.active {
+    font-weight: bold;
+    color: #33245c;
+
+}
+
 body{
     display: grid;
     grid-template-columns: 1fr;
@@ -106,7 +120,7 @@ header{
     padding: 10px; /* Adds spacing inside the field */
     border: 1px solid #ccc; /* Subtle border */
     border-radius: 5px; /* Rounded corners */
-    height: 50px; /* Adjust height to your preference */
+    height: 50px;
     box-sizing: border-box; /* Ensures padding doesn’t increase width */
 }
 .field #RoomType {
@@ -115,7 +129,7 @@ header{
     font-size: 16px; /* Same size as other input fields */
     border: 1px solid #ccc; /* Subtle border */
     border-radius: 5px; /* Rounded corners */
-    height: 40px; /* Adjust height to your preference */
+    height: 40px; 
     box-sizing: border-box; /* Ensures padding doesn’t increase width */
 }
 .btn{
@@ -142,7 +156,7 @@ header{
     font-size: 16px; /* Same size as other input fields */
     border: 1px solid #ccc; /* Subtle border */
     border-radius: 5px; /* Rounded corners */
-    height: 40px; /* Adjust height to your preference */
+    height: 40px; 
     box-sizing: border-box; /* Ensures padding doesn’t increase width */    
 }
 .error-message {
@@ -159,9 +173,3 @@ header{
     margin-top: 5px;
     display: block;
 }
-
-
-
-
-
-
