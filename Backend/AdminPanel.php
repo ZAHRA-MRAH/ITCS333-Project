@@ -40,12 +40,12 @@ if (!isset($_SESSION['user_id'])) {
             <form id="roomForm" action="addRoom.php" method="POST" enctype="multipart/form-data">
                 <div class="field input">
                     <label for="RoomNumber">Room Number:</label>
-                    <input type="text" id="RoomNumber" name="RoomNumber" required>
+                    <input type="text" id="RoomNumber" name="RoomNumber">
                     <span class="error-message"></span>
                 </div>
                 <div class="field input">
                     <label for="RoomType">Room Type:</label>
-                    <select id="RoomType" name="RoomType" required>
+                    <select id="RoomType" name="RoomType" >
                         <option value=""></option>
                         <option value="Classroom">Classroom</option>
                         <option value="Computer Lab">Computer Lab</option>
@@ -56,19 +56,19 @@ if (!isset($_SESSION['user_id'])) {
 
                 <div class="field input">
                     <label for="Capacity">Capacity:</label>
-                    <input type="number" id="Capacity" name="Capacity" required>
+                    <input type="number" id="Capacity" name="Capacity">
                     <span class="error-message"></span>
                 </div>
 
                 <div class="field input">
                     <label for="Equipment">Equipment:</label>
-                    <textarea id="Equipment" name="Equipment" required></textarea>
+                    <textarea id="Equipment" name="Equipment"></textarea>
                     <span class="error-message"></span>
                 </div>
 
                 <div class="field input">
                     <label for="imgURL">Upload Image:</label>
-                    <input type="file" id="imgURL" name="imgURL" required>
+                    <input type="file" id="imgURL" name="imgURL">
                     <span class="error-message"></span>
                 </div>
                 <button class="btn" type="submit">Add Room</button>
