@@ -16,22 +16,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Display Error Message for Input Field
     function showError(input, message) {
         const fieldDiv = input.closest('.field.input');
+        if (!fieldDiv) {
+            console.error("Field container not found for input:", input);
+            return; // Exit if the container is missing
+        }
+    
         fieldDiv.classList.remove('success');
         fieldDiv.classList.add('error');
-        fieldDiv.querySelector('.error-message').textContent = message;
+    
+        const errorMessage = fieldDiv.querySelector('.error-message');
+        if (errorMessage) {
+            errorMessage.textContent = message;
+        } else {
+            console.error("Error message container not found for input:", input);
+        }
     }
-
-    // Mark an input field as valid
+    
     function showSuccess(input) {
         const fieldDiv = input.closest('.field.input');
+        if (!fieldDiv) {
+            console.error("Field container not found for input:", input);
+            return; // Exit if the container is missing
+        }
+    
         fieldDiv.classList.remove('error');
         fieldDiv.classList.add('success');
-        fieldDiv.querySelector('.error-message').textContent = '';
+    
+        const errorMessage = fieldDiv.querySelector('.error-message');
+        if (errorMessage) {
+            errorMessage.textContent = '';
+        } else {
+            console.error("Error message container not found for input:", input);
+        }
     }
-
+    
     // Validate Room Type
     function validateRoomType(type) {
         const validRoomTypes = ['Classroom', 'Computer Lab', 'Meeting Room'];
