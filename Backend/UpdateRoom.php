@@ -101,38 +101,11 @@ if (!isset($_SESSION['user_id'])) {
                       <span class="error-message"></span>
                 </div>
 
-                <button class="btn btn-primary mt-3" type="button" data-bs-toggle="modal" data-bs-target="#confirmUpdateModal">Update Room</button>
+                <button class="btn btn-primary mt-3" type="submit">Update Room</button>
             </form>
         `;
         document.getElementById('updateRoomFormContainer').innerHTML = formHTML;
     }
-    document.addEventListener('DOMContentLoaded', function () {
-    const confirmUpdateBtn = document.getElementById('confirmUpdateBtn');
-    confirmUpdateBtn.addEventListener('click', function () {
-        const updateRoomForm = document.getElementById('updateRoomForm');
-        if (updateRoomForm) {
-            updateRoomForm.submit(); // Submit the form when confirmed
-        }
-    });
-});
 </script>
-<!-- Confirmation Bootstrap Modal -->
-<div class="modal fade" id="confirmUpdateModal" tabindex="-1" aria-labelledby="confirmUpdateModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmUpdateModalLabel">Confirm Update</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to update this room? This action cannot be undone.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" id="confirmUpdateBtn">Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
