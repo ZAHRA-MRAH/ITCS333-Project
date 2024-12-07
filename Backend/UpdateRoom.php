@@ -81,20 +81,24 @@ if (!isset($_SESSION['user_id'])) {
                         <option value="Computer Lab" ${room.RoomType === 'Computer Lab' ? 'selected' : ''}>Computer Lab</option>
                         <option value="Meeting Room" ${room.RoomType === 'Meeting Room' ? 'selected' : ''}>Meeting Room</option>
                     </select>
+                      <span class="error-message"></span>
                 </div>
 
                 <div class="field input">
                     <label for="newCapacity">New Capacity:</label>
                     <input type="number" id="newCapacity" name="newCapacity" value="${room.Capacity}" class="form-control" required>
+                      <span class="error-message"></span>
                 </div>
 
                 <div class="field input">
                     <label for="newEquipment">New Equipment:</label>
                     <textarea id="newEquipment" name="newEquipment" class="form-control" required>${room.Equipment}</textarea>
+                    <span class="error-message"></span>
                 </div>
                 <div class="field input">
                     <label for="newImgURL">Upload New Image (Optional):</label>
                     <input type="file" id="newImgURL" name="newImgURL" class="form-control">
+                      <span class="error-message"></span>
                 </div>
 
                 <button class="btn btn-primary mt-3" type="submit">Update Room</button>
