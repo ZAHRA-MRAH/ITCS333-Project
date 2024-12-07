@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Validate Room Number
         const roomNumberValue = roomNumber.value.trim();
         if (!validateRoomNumber(roomNumberValue)) {
-            showError(roomNumber, "Invalid Room Number (must start with S40-).");
+            showError(roomNumber, "Invalid Room Number (must be following: S40-0XX, S40-10XX, or S40-20XX).");
             isValid = false;
         } else {
             showSuccess(roomNumber);
