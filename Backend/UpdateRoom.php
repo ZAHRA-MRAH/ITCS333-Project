@@ -86,13 +86,13 @@ if (!isset($_SESSION['user_id'])) {
 
                 <div class="field input">
                     <label for="newCapacity">New Capacity:</label>
-                    <input type="number" id="newCapacity" name="newCapacity" value="${room.Capacity}" class="form-control" required>
+                    <input type="number" id="newCapacity" name="newCapacity" value="${room.Capacity}" class="form-control">
                       <span class="error-message"></span>
                 </div>
 
                 <div class="field input">
                     <label for="newEquipment">New Equipment:</label>
-                    <textarea id="newEquipment" name="newEquipment" class="form-control" required>${room.Equipment}</textarea>
+                    <textarea id="newEquipment" name="newEquipment" class="form-control" >${room.Equipment}</textarea>
                     <span class="error-message"></span>
                 </div>
                 <div class="field input">
