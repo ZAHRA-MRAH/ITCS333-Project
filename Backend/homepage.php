@@ -45,7 +45,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -53,55 +53,59 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <header>
 
     <nav class="navbar">
-    <a class="navbar-logo" href="homepage.php">
-      <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
-      UOB IT College Room Booking System
-    </a>
+      <a class="navbar-logo" href="homepage.php">
+        <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
+        UOB IT College Room Booking System
+      </a>
 
 
       <nav class="leftbar">
 
-      <div class="navbutton1">
-        <a href="homepage.php" id="navlink">Home</a>
-    </div>
+        <div class="navbutton1">
+          <a href="homepage.php" id="navlink">Home</a>
+        </div>
 
-      <div class="navbutton2">
-        <a href="viewBookings.php" id="navlink">View Booking</a>
-</div>
-    </nav>
-        <nav class="rightbar">
-              <div class="profile">
+        <div class="navbutton2">
+          <a href="viewBookings.php" id="navlink">View Booking</a>
+        </div>
+      </nav>
+      <nav class="rightbar">
+        <div class="profile">
           <a class="profilebtn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="<?php echo $profilePic; ?>" alt="Profile">
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="editprofile" href="profile.php">Edit Profile</a></li>
+            <li><a class="editprofile" href="profile.php"> Profile</a></li>
             <li><a class="logout" href="logout.php">Log out</a></li>
           </ul>
         </div>
       </nav>
     </nav>
   </header>
+
+
+  <h2 id="welcome-messege">Welcome <?php echo htmlspecialchars($fname)?>!</h2>
+  <style>
+    #welcome-messege {
+    text-align: left !important; 
+    text-indent: 30px; 
+    margin: 10px 30px; 
+    background-image: linear-gradient(to right, #b393d3, #4f4da7);
+    color: transparent;
+    background-clip: text;
+
+}
+  </style>
+
   <main>
-    <h2 id="welcome-messege"><?php
-                              try {
-                                if (!isset($fname)) {
-                                  throw new Exception("Name not set");
-                                }
-
-                                echo "<h2 id='welcome-messege'>Welcome " . htmlspecialchars($fname) . "!</h2>";
-                              } catch (Exception $e) {
-
-                                echo "<h2 id='welcome-messege'>Welcome Guest!</h2>";
-                              }
-                              ?></h2>
+ 
     <div class="container">
       <div class="box form-box">
         <header>Search for Available Rooms:</header>
         <form id="searchForm">
           <select class="form-select" name="room_type" aria-label="Default select example">
             <div id="options">
-            <option selected disabled>Room Type</option>
+              <option selected disabled>Room Type</option>
               <option value="Classroom">Classroom</option>
               <option value="Computer Lab">Computer Lab</option>
 
@@ -132,7 +136,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
 
-    <script src = "../Frontend/search.js"></script>
+    <script src="../Frontend/search.js"></script>
 
     <div id="results"></div>
 
@@ -206,7 +210,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 
-<?php 
+<?php
 require('footer.php')
 ?>
 

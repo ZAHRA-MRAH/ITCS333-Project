@@ -78,14 +78,17 @@ header {
 .profile {
     position: relative; 
 }
-.profile img {
+.navbar .profile img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     margin-right: 5px;
     background-color: transparent;
     cursor: pointer;
+
+    
 }
+
 .dropdown-menu {
     position: absolute; 
     top: 100%;
@@ -113,13 +116,7 @@ header {
 }
 
 /* Nav Bar Styling end -----------Home Page Styling */
-#welcome-messege{
-    align-items: center;
-    text-indent: 30px;
-    background-image: linear-gradient(to right, #b393d3, #4f4da7);
-    color: transparent;
-    background-clip: text;
-}
+
 
 .container {
     display: flex;
@@ -174,7 +171,6 @@ header {
 }
 
 
-
 .Date{
     margin: 10px 0;
     text-align: center;
@@ -210,8 +206,8 @@ header {
     font-weight: bold;
 }
 
-/* #searchbtn :hover{
-    
-} */
+
+
+
  
 
