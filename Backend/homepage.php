@@ -86,14 +86,15 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <h2 id="welcome-messege">Welcome <?php echo htmlspecialchars($fname)?>!</h2>
   <style>
-    #welcome-messege {
+#welcome-messege {
     text-align: left !important; 
-    text-indent: 30px; 
+    text-indent: 20px; 
     margin: 10px 30px; 
-    background-image: linear-gradient(to right, #b393d3, #4f4da7);
-    color: transparent;
+    background-image: linear-gradient(to right, #1B61AC, #2F5175) !important; 
+    -webkit-background-clip: text; 
     background-clip: text;
-
+    color: transparent;
+    -webkit-text-fill-color: transparent; 
 }
   </style>
 
@@ -141,65 +142,63 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div id="results"></div>
 
     <style>
-      /* Style for the results container */
-      #results {
-        margin-top: 30px;
-      }
+  /* Style for the results container */
+  #results {
+    margin-top: 30px;
+  }
 
+  .room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 
-      .room-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
+  .room-card {
+    background-color: #FEFEFE;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
 
+  .room-card .room-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 
-      .room-card {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
+  .room-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: #42413E;
+  }
 
+  .room-card p {
+    margin: 5px 0;
+    color: #44471C; 
+  }
 
-      .room-card .room-img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 8px;
-      }
+  .Time {
+    padding-top: 10px;
+    text-align: center;
+  }
 
+  .Timespan {
+    color: #2F5175;
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-align: center;
+  }
 
-      .room-card h3 {
-        margin: 10px 0 5px;
-        font-size: 1.2em;
-      }
+  .custom-alert {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: #998F6E; 
+  }
+</style>
 
-      .room-card p {
-        margin: 5px 0;
-        color: #555;
-      }
-
-      .Time {
-        padding-top: 10px;
-        text-align: center;
-      }
-
-      .Timespan {
-        color: #b393d3;
-        font-weight: bold;
-        padding-bottom: 20px;
-      }
-
-      .custom-alert {
-        max-width: 600px;
-        margin: 0 auto;
-        /* Center horizontally */
-        text-align: center;
-        /* Center text */
-      }
-    </style>
 
 
   </main>
