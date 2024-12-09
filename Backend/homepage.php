@@ -84,25 +84,25 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </header>
 
 
-  <h2 id="welcome-messege">Welcome <?php echo htmlspecialchars($fname)?>!</h2>
+  <h2 id="welcome-messege">Welcome <?php echo htmlspecialchars($fname) ?>!</h2>
   <style>
     #welcome-messege {
-    text-align: left !important; 
-    text-indent: 30px; 
-    margin: 10px 30px; 
-    background-image: linear-gradient(to right, #b393d3, #4f4da7);
-    color: transparent;
-    background-clip: text;
+      text-align: left !important;
+      text-indent: 30px;
+      margin: 10px 30px;
+      background-image: linear-gradient(to right, #b393d3, #4f4da7);
+      color: transparent;
+      background-clip: text;
 
-}
+    }
   </style>
 
   <main>
- 
+
     <div class="container">
       <div class="box form-box">
         <header>Search for Available Rooms:</header>
-        <form id="searchForm">
+        <form id="searchForm" action="search.php">
           <select class="form-select" name="room_type" aria-label="Default select example">
             <div id="options">
               <option selected disabled>Room Type</option>
@@ -137,10 +137,20 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <script src="../Frontend/search.js"></script>
-
+    <div id="message"></div>
     <div id="results"></div>
 
     <style>
+      /* Style for the message container */
+      #message {
+        max-width: 550px;
+        margin: 20px auto;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        margin: 0 auto
+      }
+
       /* Style for the results container */
       #results {
         margin-top: 30px;
