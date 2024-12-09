@@ -79,7 +79,6 @@ if (!isset($_SESSION['user_id'])) {
                     <select id="newRoomType" name="newRoomType" class="form-control">
                         <option value="Classroom" ${room.RoomType === 'Classroom' ? 'selected' : ''}>Classroom</option>
                         <option value="Computer Lab" ${room.RoomType === 'Computer Lab' ? 'selected' : ''}>Computer Lab</option>
-                        <option value="Meeting Room" ${room.RoomType === 'Meeting Room' ? 'selected' : ''}>Meeting Room</option>
                     </select>
                       <span class="error-message"></span>
                 </div>

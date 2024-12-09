@@ -50,7 +50,6 @@ if (!isset($_SESSION['user_id'])) {
                         <option value=""></option>
                         <option value="Classroom">Classroom</option>
                         <option value="Computer Lab">Computer Lab</option>
-                        <option value="Meeting Room">Meeting Room</option>
                     </select>
                     <span class="error-message"></span>
                 </div>
