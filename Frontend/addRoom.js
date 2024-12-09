@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function validateRoomType(type) {
         // List of valid room types
-        const validRoomTypes = ['Classroom', 'Computer Lab', 'Meeting Room'];
+        const validRoomTypes = ['Classroom', 'Computer Lab'];
         // Check if the selected value matches one of the valid options
         return validRoomTypes.includes(type);
     }
