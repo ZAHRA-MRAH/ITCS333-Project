@@ -46,7 +46,7 @@ if (isset($_SESSION['user_id'])) {
   <nav class="navbar">
     <a class="navbar-logo" href="homepage.php">
       <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
-      UOB IT College Room Booking System
+      IT College Room Booking
     </a>
 
 

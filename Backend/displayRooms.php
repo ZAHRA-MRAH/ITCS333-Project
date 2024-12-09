@@ -37,7 +37,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="display-rooms-section">
-        <h1 style="text-align : center; margin-top: 200px; color: #553c9a;"> Browse Rooms</h1>
+        <h1 style="text-align : center; margin-top: 50px; color: #2F5175;"> Browse Rooms</h1>
         <div class="room-container">
             <hr>
             <h2>Classrooms</h2>
@@ -62,10 +62,14 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
                                     </div>
                                     <div class="modal-body">
-                                        <h4>Capacity:</h4>
+                                        <div class="capacity">
+                                            <img src="../pictures/people.png" alt="Capacity Icon" class="icon">
+                                        <h4>Capacity:</h4> </div>
                                         <p> <?php echo $room['Capacity']; ?> people</p>
-                                        <h4>Equipment:</h4>
-                                        <ul>
+                                        
+                                        <div class="equipment">
+                                            <img src="../pictures/blackboard.png" alt="Equipment Icon" class="icon">
+                                        <h4>Equipment:</h4> </div>                                        <ul>
                                             <?php
                                             $equipment = explode("\n", $room['Equipment']);
                                             foreach ($equipment as $item) {
@@ -74,6 +78,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
                                             }
                                             ?>
                                         </ul>
+                                    
 
                                     </div>
                                     <div class="modal-footer">
@@ -119,9 +124,13 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
 
                                     </div>
                                     <div class="modal-body">
-                                        <h4>Capacity:</h4>
-                                        <p> <?php echo $lab['Capacity']; ?> people</p>
-                                        <h4>Equipment:</h4>
+                                        <div class="capacity">
+                                            <img src="../pictures/people.png" alt="Capacity Icon" class="icon">
+                                        <h4>Capacity:</h4> </div>
+                                        <p> <?php echo $lab['Capacity']; ?> people</p> 
+                                        <div class="equipment">
+                                            <img src="../pictures/blackboard.png" alt="Equipment Icon" class="icon">
+                                        <h4>Equipment:</h4> </div>
                                         <ul>
                                             <?php
                                             $equipment = explode("\n", $lab['Equipment']);
@@ -155,8 +164,15 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <style>
+
+.modal-body h4 {
+    font-size: 16px;
+    color: #42413E;
+    margin-bottom: 5px;
+}
         /* Custom style for Close button */
-        .custom-close-color {
+
+          .custom-close-color {
             background-color: #dc3545;
             color: white;
             border: none;
@@ -169,25 +185,26 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
         .custom-close-color:hover {
             background-color: #c82333;
             cursor: pointer;
+            color:white;
         }
+
 
         /* Custom style for Book Room button */
         .custom-book-button {
-            background-color: #b393d3;
-            color: white !important;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            text-decoration: none;
-        }
+        background-color: #2F5175;
+        color: #FEFEFE !important;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-decoration: none;
+    }
 
-
-        .custom-book-button:hover {
-            background-color: #553c9a;
-            cursor: pointer;
-            text-decoration: none !important;
-        }
+    .custom-book-button:hover {
+        background-color: #1B61AC;
+        cursor: pointer;
+        text-decoration: none !important;
+    }
     </style>
 
 

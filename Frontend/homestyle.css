@@ -1,5 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 header {
-    background-color: #F2F1EC; /* Alabaster */
+    background-color: #F2F1EC; 
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -8,6 +12,8 @@ header {
     display: flex;
     align-items: center;
     padding: 10px 20px;
+    position: relative;
+    z-index: 100;
 } 
 
 .navbar-logo:visited, :link {
@@ -15,7 +21,7 @@ header {
     align-items: center;
     font-size: 20px;
     font-weight: 600;
-    background-image: linear-gradient(to right, #1B61AC, #2F5175); /* Green Blue to YInMn Blue */
+    background-image: linear-gradient(to right, #1B61AC, #2F5175);
     color: transparent;
     background-clip: text;
     text-decoration: none;
@@ -27,22 +33,25 @@ header {
 }
 
 .nav-linkk.active {
-    font-weight: bold;
-    color: #42413E; 
-}
 
+   font-weight: bold;
+}
 .leftbar {
     display: flex;
+    flex-direction: row;
     align-items: center; 
     gap: 15px; 
     flex-grow: 1;
     padding: 8px;
     color: #2F5175; 
+    height: 40px;
 }
 
 .navbutton1 a:link, a:visited {
+    height: 100%;
+    padding: 0 20px;
     color: #2F5175; 
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     text-decoration: none;
 }
@@ -54,7 +63,7 @@ header {
 
 .navbutton2 a:link, a:visited {
     color: #2F5175; /* YInMn Blue */
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     text-decoration: none;
 }
@@ -66,10 +75,14 @@ header {
 
 .profile {
     position: relative; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
 }
 .navbar .profile img {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 5px;
     background-color: #E5E3DA; /* Alabaster */
@@ -102,7 +115,9 @@ header {
     color: #44471C; 
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
+
 
 /* Nav Bar Styling end -----------Home Page Styling */
 
@@ -192,4 +207,181 @@ header {
     height: 40px;
     color: #FEFEFE; 
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 8px 15px;
+    }
+
+    .navbar-logo:visited, :link {
+        font-size: 18px;
+    }
+
+    .leftbar {
+        justify-content: center;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .form-box {
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .form-box header {
+        font-size: 22px;
+    }
+
+    .form-select {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #searchbtn {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .Date input[type="date"] {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    #welcome-messege {
+        font-size: 20px;
+        margin: 15px 20px;
+    }
+
+    .profile {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+
+    .navbar-logo:visited, :link {
+        font-size: 16px;
+    }
+
+    .navbar-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .leftbar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .navbutton1 a:link, 
+    .navbutton1 a:visited,
+    .navbutton2 a:link, 
+    .navbutton2 a:visited {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .form-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .form-box header {
+        font-size: 20px;
+    }
+
+    .form-select {
+        width: 95%;
+        font-size: 14px;
+        height: 32px;
+    }
+
+    #searchbtn {
+        width: 95%;
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .Date input[type="date"] {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .Datespan, .Timespan {
+        font-size: 14px;
+    }
+
+    #welcome-messege {
+        font-size: 18px;
+        margin: 10px 15px;
+    }
+
+    .profile img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dropdown-menu {
+        min-width: 120px;
+        margin: 10px;
+    }
+
+    .dropdown-menu a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .modal-content {
+        overflow: hidden; /* Remove overflow */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-dialog {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+
+    .modal-content {
+        overflow: hidden; /* Remove overflow */
+    }
+
+    .modal-body {
+        padding: 10px;
+    }
+
+    .modal-header, .modal-footer {
+        padding: 10px;
+    }
+
+    .modal-header h5 {
+        font-size: 18px;
+    }
+
+    .modal-body p, 
+    .modal-body li {
+        font-size: 14px;
+    }
 }

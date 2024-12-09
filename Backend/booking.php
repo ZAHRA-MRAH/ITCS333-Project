@@ -34,8 +34,6 @@ $imgURL = $stmt->fetchColumn();
 
 <body>
     <h1>Book Room <?php echo htmlspecialchars($room_number); ?></h1>
-    <!-- confirmation message -->
-    <div id="confirmation-message" style="margin-top: 20px; max-width: 500px; margin-left: 20px;" class="d-none  mx-auto"></div>
     <h2>Room Details</h2>
     <div class="main-container">
         <div class="left-container">
@@ -66,6 +64,8 @@ $imgURL = $stmt->fetchColumn();
                     <button type="button" id="confirm-booking-btn" class="btn custom-book-button">Confirm Booking</button>
                 </form>
             </div>
+            <!-- confirmation message -->
+    <div id="confirmation-message" style="margin-top: 20px; max-width: 500px; margin-left: 20px;" class="d-none  mx-auto"></div>
         </div>
         <div class="img-container">
             <img src=<?php echo $imgURL ?> alt="Room Image" width="300" height="300">
@@ -74,157 +74,304 @@ $imgURL = $stmt->fetchColumn();
     </div>
     </form>
 
-
     <style>
-        h1 {
-            color: #553c9a;
-            text-indent: 2px;
-        }
+   
+    h1 {
+        color: #2F5175;
+        margin: 30px 0;
+        text-align: center;
+        font-size: 2.5rem;
+    }
 
-        h2 {
-            color: #9B89CF;
-            /*changelater*/
-            text-indent: 25px;
-        }
+    h2 {
+        color: #1B61AC;
+        margin: 20px 0;
+        margin-left: 20px;
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
 
+    .main-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .left-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 60%;
+    }
+
+    .details-container {
+        top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: fit-content;
+        width: 99%;
+        background-color: #FEFEFE; 
+        border: 1px solid #D9D5C8; 
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 10px;
+        margin-left: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    
+    .capacity {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .equipment {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .capacity p,
+    .equipment p {
+        color: #44471C; 
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .img-container {
+        position: relative;
+        top: 20px;
+        width: 40%;
+        height: fit-content;
+        background-color: #FEFEFE;
+        border: 1px solid #D9D5C8;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        align-self: flex-start;
+    }
+
+    .img-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .bookingform-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        height: auto;
+        min-height: 250px;
+        width: 100%;
+        background-color: #FEFEFE; 
+        border: 1px solid #D9D5C8; 
+        border-radius: 8px;
+        padding: 20px;
+        margin-left: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .booking-date {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    label {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #CCC7B6; 
+        margin-top: 10px;
+    }
+
+    .Date input[type="date"] {
+        width: 200px;
+        border: 2px solid #CCC7B6; 
+        border-radius: 5px;
+        font-size: 16px;
+        text-align: center;
+        outline: none;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    #time-slot {
+        background-color: #1B61AC; 
+        border-radius: 5px;
+        color: #FEFEFE;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #time-slot option {
+        color: #000;
+    }
+
+    .custom-book-button {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        background-color: #2F5175; 
+        color: #FEFEFE; 
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-book-button:hover {
+        background-color: #1B61AC; 
+        color: #FEFEFE; 
+    }
+
+    #booking-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    label {
+        color: #2F5175;
+        margin-bottom: 5px;
+    }
+
+    .custom-book-button {
+        position: static;
+        align-self: flex-end;
+        margin-top: 20px;
+    }
+
+    #confirmation-message {
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
         .main-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
         }
-
+        
         .left-container {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            margin-right: 20px;
+            max-width: 100%;
         }
-
-        .details-container {
-            top: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            height: fit-content;
-            width: 99%;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px auto;
-            margin-left: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
+        
         .img-container {
-            position: relative;
-            top: 0;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px auto;
-            margin-left: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: static;
+            width: 100%;
         }
-
-        .bookingform-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            height: 200px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
+        
+        h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
             margin-left: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .capacity {
-            display: flex;
-            align-items: center;
-            margin-right: 15px;
+        .details-container,
+        .bookingform-container {
+            margin-left: 0;
+            width: 100%;
         }
 
+        .capacity,
         .equipment {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-        }
-
-        .icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+            padding: 8px;
         }
 
         .capacity p,
         .equipment p {
-            color: #9B89CF;
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .booking-date {
-            text-align: center;
-            margin: 10px 0;
-        }
-
-        label {
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            font-weight: normal;
-            color: #b393d3;
-            font-weight: bold;
-            margin-top: 10px;
-
-        }
-
-        .Date input[type="date"] {
-            width: 200px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            text-align: center;
-            outline: none;
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
         }
 
         #time-slot {
-            background-color: #9B89CF;
-            border-radius: 5px;
-            font-size: 17px;
-            border: none;
-            width: 175px;
-            height: 35px;
-            color: #fdfdfd;
-            /* font-weight: bold; */
-            text-align: center;
+            width: 100%;
+        }
+
+        #booking-form {
+            gap: 10px;
         }
 
         .custom-book-button {
-            position: absolute;
-            right: 20px;
-            bottom: 10px;
-            background-color: #9B89CF;
-            color: white;
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        .details-container,
+        .bookingform-container {
+            padding: 15px;
+        }
+
+        .img-container {
+            padding: 15px;
+        }
+
+        .capacity p,
+        .equipment p {
+            font-size: 12px;
+        }
+
+        label {
             font-size: 16px;
-            transition: background-color 0.3s ease;
         }
 
-        .custom-book-button:hover {
-            background-color: #b393d3;
-            color: white;
+        .Date input[type="date"],
+        #time-slot {
+            font-size: 14px;
+            width: 100%;
         }
-    </style>
 
+        .custom-book-button {
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+    }
+</style>
 
 
 

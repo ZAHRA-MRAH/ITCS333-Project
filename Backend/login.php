@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (isset($_SESSION['user_id'])) {
     header("Location: homepage.php");
     exit();
@@ -17,6 +18,12 @@ if (isset($_SESSION['user_id'])) {
     <title>Login</title>
 </head>
 <body>
+
+    <div class="header">
+    <img src="../pictures/uob-logo.svg" alt="Image" class="left-image">
+    <span class="text-span">UOB IT College Room Booking System</span>
+</div>
+
     <div class="container">
         <div class="box form-box">
             <header>Sign in</header>
@@ -48,5 +55,6 @@ if (isset($_SESSION['user_id'])) {
             </form> 
         </div>               
     </div>
+    <footer>© ITCS333 Project Copyright 2024 All Rights Reserved</footer>
 </body>
 </html>

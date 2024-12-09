@@ -8,6 +8,7 @@ if (!isset($_SESSION['errors'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require('Connection.php');
+    require('header.php');
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $firstName = trim($_POST['firstName']);
@@ -103,6 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Register</title>
 </head>
  
+<div class="header">
+    <img src="../pictures/uob-logo.svg" alt="Image" class="left-image">
+    <span class="text-span">UOB IT College Room Booking System</span>
+</div>
+
 <body>
     <div class="container">
         <div class="box form-box">
@@ -167,8 +173,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
         </div>
     </div>
-
+    <footer>© ITCS333 Project Copyright 2024 All Rights Reserved</footer>
 
 </body>
+
 
 </html>

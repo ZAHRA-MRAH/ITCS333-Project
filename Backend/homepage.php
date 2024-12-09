@@ -55,7 +55,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <nav class="navbar">
       <a class="navbar-logo" href="homepage.php">
         <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
-        UOB IT College Room Booking System
+        IT College Room Booking
       </a>
 
 
@@ -175,8 +175,9 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   .room-card p {
-    margin: 5px 0;
-    color: #44471C; 
+    color: #6F6B45;
+    margin: 0;
+    font-size: 16px;
   }
 
   .Time {
