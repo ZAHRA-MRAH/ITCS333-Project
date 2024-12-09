@@ -22,6 +22,7 @@ document.getElementById('searchForm').addEventListener('submit', async function 
         rooms.forEach((room) => {
             const roomCard = `
             <div class="room-card">
+            
                 <img class="room-img" src="${room.imgURL}" alt="Room Image">
                 <h3>Room ${room.RoomNumber}</h3>
                 <button type="button" class="btn btn-primary custom-book-button" data-bs-toggle="modal" data-bs-target="#modal${room.RoomID}">
@@ -36,9 +37,15 @@ document.getElementById('searchForm').addEventListener('submit', async function 
                                 <h5 class="modal-title" id="modalLabel${room.RoomID}">Room ${room.RoomNumber} Details</h5>
                             </div>
                             <div class="modal-body">
-                                <h4>Capacity:</h4>
+                                <div class="capacity">
+                                    <img src="../pictures/people.png" alt="Capacity Icon" class="icon">
+                                    <h4>Capacity:</h4>
+                                </div>
                                 <p>${room.Capacity} people</p>
-                                <h4>Equipment:</h4>
+                                <div class="equipment">
+                                    <img src="../pictures/blackboard.png" alt="Equipment Icon" class="icon">
+                                    <h4>Equipment:</h4>
+                                </div>
                                 <ul>
                                     ${room.Equipment.split('\n').map((item) => `<li>${item.trim()}</li>`).join('')}
                                 </ul>
