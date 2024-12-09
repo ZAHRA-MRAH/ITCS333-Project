@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 <div class="header">
     <img src="../pictures/uob-logo.svg" alt="Image" class="left-image">
-    <span class="text-span">UOB IT College Room Booking System</span>
+    <span class="text-span">IT College Room Booking</span>
 </div>
 
 <body>
