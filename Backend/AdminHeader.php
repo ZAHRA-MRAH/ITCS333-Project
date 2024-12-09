@@ -34,10 +34,11 @@
                 <div class="navbutton1">
                     <a href="roomSchedules.php" id="navlink" class="nav-link">Manage Room Schedules</a>
                 </div>
-                <div class="navbutton2">
-                    <a href="logout.php" id="navlink">log out</a>
-                </div>
+    
             </nav>
+            <div class="navbutton2">
+                    <a href="logout.php" id="navlink">Log out</a>
+                </div>
         </nav>
     </header>
 
