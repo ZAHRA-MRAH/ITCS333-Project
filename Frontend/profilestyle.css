@@ -55,7 +55,7 @@
 
 .form-box {
     width: 450px;
-    height: 700px;
+    height: fit-content;
     margin: 0px 10px;
 }
 
