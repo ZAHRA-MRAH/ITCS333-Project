@@ -43,59 +43,133 @@ try {
 <body>
 
 
-    <style>
-        .booking-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-evenly;
-            margin: 20px 0;
-        }
+<style>
+    .booking-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-evenly;
+        margin: 20px 0;
+    }
 
-        .booking-card {
-            flex: 1 1 calc(25% - 20px);
-            max-width: 300px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .booking-card {
+        flex: 1 1 calc(25% - 20px);
+        max-width: 300px;
+        background: #F2F1EC;
+        border: 1px solid #F2F1EC; 
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .booking-card img {
-            max-width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+    .booking-card img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #F2F1EC;
+    }
 
-        .booking-card h5 {
-            margin: 10px 0;
-        }
+    .booking-card h5 {
+        margin: 10px 0;
+        color: #2F5175; /* YInMn Blue */
+        font-weight: 600;
+    }
 
-        .booking-card p {
-            margin: 5px 0;
-            color: #555;
-            font-weight: bold;
-        }
+    .booking-card p {
+        margin: 5px 0;
+        color: #44471C; 
+        font-weight: bold;
+    }
 
-        .status-confirmed {
-            color: green !important;
-            font-weight: bold;
-        }
+    .status-confirmed {
+        color: green !important; 
+        font-weight: bold;
+    }
 
-        .status-cancelled {
-            color: red !important;
-            font-weight: bold;
-        }
+    .status-cancelled {
+        color: #E63946 !important; 
+        font-weight: bold;
+    }
 
-        h2 {
-            text-align: center;
-            margin-top: 20px;
-            color: #553c9a;
-        }
-    </style>
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        color: #2F5175; 
+        font-weight: bold;
+    }
+
+    /* Buttons */
+    .btn-danger {
+        background-color: #E63946; 
+        border-color: transparent;
+        color: #FEFEFE; 
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-danger:hover {
+        background-color: #C9253B; 
+    }
+
+    .btn-secondary {
+        background-color: #2F5175; 
+        border-color: transparent;
+        color: #FEFEFE; 
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #1B61AC; 
+    }
+
+    /* Modal styling */
+    .modal-content {
+        background-color: #FEFEFE; 
+        border: 1px solid #F2F1EC;
+    }
+
+    .modal-header, .modal-footer {
+        border-bottom: 1px solid #F2F1EC;
+        border-top: 1px solid #F2F1EC;
+    }
+
+    .modal-title {
+        color: #2F5175; 
+        font-weight: bold;
+    }
+
+    .alert {
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .alert-success {
+        background-color: #DFF2BF; 
+        color: #4F8A10; 
+    }
+
+    .alert-danger {
+        background-color: #FFBABA; 
+        color: #D8000C;
+    }
+
+    .alert-warning {
+        background-color: #FFF4CC; 
+        color: #9F6000; 
+    }
+</style>
+
 </head>
 
 <body>

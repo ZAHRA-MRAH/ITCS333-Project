@@ -1,13 +1,12 @@
-
 .display-rooms-section body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #E5E3DA;
 }
 
 .display-rooms-section h1, h2, h3 {
-    color: #553c9a !important;
+    color: #2F5175;
     text-align: center;
     padding: 20px;
 }
@@ -16,14 +15,10 @@ h1 {
     text-align: center;
 }
 
-
-
 hr {
     margin-top: 30px;
-    
 }
 
-/* Room Browsing Page */
 .display-rooms-section .room-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -37,7 +32,7 @@ hr {
 }
 
 .display-rooms-section .room-card {
-    background-color: white;
+    background-color: #FEFEFE;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -54,26 +49,139 @@ hr {
 
 .display-rooms-section .room-card h3 {
     margin-top: 10px;
+    color: #44471C;
 }
 
-.modal-body ul{
+.modal-header h5 {
+    color: #2F5175;
+}
+.capacity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.capacity p{
+    color: #6F6B45;
+    margin: 0;
+    font-size: 16px;
+}
+.equipment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.modal-body ul {
     align-items: center;
     list-style-type: none;
+    color: #6F6B45;
     padding-left: 0;
     margin-left: 0;
 }
-.modal-body li{
+
+.modal-body li {
     font-size: 16px;
-    color: #333;
+    color: #6F6B45;
     margin-bottom: 5px;
-}  
-  
+}
 
+@media (max-width: 768px) {
+    .display-rooms-section .room-container {
+        max-width: 90%;
+        padding: 5px;
+    }
 
+    .display-rooms-section .room-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
 
+    .display-rooms-section .room-card {
+        width: 100%;
+        padding: 15px;
+    }
 
+    .display-rooms-section .room-img {
+        height: 120px;
+    }
 
+    .modal-dialog {
+        max-width: 90%;
+        margin: 20px auto;
+    }
 
+    .capacity, .equipment {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .icon {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .modal-body ul {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .display-rooms-section h1 {
+        font-size: 24px;
+        margin-top: 100px;
+    }
+
+    .display-rooms-section h2 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .display-rooms-section .room-container {
+        max-width: 95%;
+        padding: 5px;
+    }
+
+    .display-rooms-section .room-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .display-rooms-section .room-card {
+        padding: 10px;
+    }
+
+    .display-rooms-section .room-img {
+        height: 100px;
+    }
+
+    .display-rooms-section .room-card h3 {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .modal-body h4 {
+        font-size: 14px;
+    }
+
+    .modal-body p, 
+    .modal-body li {
+        font-size: 14px;
+    }
+
+    .custom-book-button,
+    .custom-close-color {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
 
 

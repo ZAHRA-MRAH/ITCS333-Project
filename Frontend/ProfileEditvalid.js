@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', e => {
         e.preventDefault(); // Prevent default submission
         const clickedButton = e.submitter;
-        if (clickedButton && clickedButton.name === 'updatecnfrm'){
-        if (validateInputs()) {
-            
-            form.submit(); // Submit form if valid
-        } } else if (clickedButton && clickedButton.name === 'return') {
-            
-            
-            window.location.href = '../Backend/profile.php'; 
-    }
-    });
+        if (clickedButton && clickedButton.name === 'updatecnfrm') {
+            if (validateInputs()) {
 
+                form.submit(); // Submit form if valid
+            }
+        } else if (clickedButton && clickedButton.name === 'return') {
+
+
+            window.location.href = '../Backend/profile.php';
+        }
+    });
     function showError(input, message) {
         const fieldDiv = input.closest('.field.input');
         fieldDiv.classList.remove('success');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validateInputs() {
-        let isValid = true; 
+        let isValid = true;
 
         const firstNameValue = firstName.value.trim();
         const lastNameValue = lastName.value.trim();
@@ -79,6 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
             showSuccess(phoneNumber);
         }
 
-        return isValid; 
+        return isValid;
     }
 });

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('Connection.php');
+require('header.php');
 
 // Check if the user is logged in
 $user_id = $_SESSION['user_id'];
@@ -110,6 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="..\pictures\uob-logo.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../Frontend/profilestyle.css">
@@ -119,32 +121,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container">
-        <div class="box form-box">
+        <div class="box form-box" id="formbox">
             <header>Update Profile Information</header>
             <style>
-                .message {
+                /* PHP Messages */
+                .php-message {
                     margin: 10px 0;
                     padding: 10px;
                     border-radius: 5px;
+                    font-weight: bold;
                 }
 
-                .success {
+                .php-success {
                     color: #155724;
                     background-color: #d4edda;
                     border: 1px solid #c3e6cb;
                 }
 
-                .error {
+                .php-error {
                     color: #721c24;
                     background-color: #f8d7da;
                     border: 1px solid #f5c6cb;
                 }
+
+                /* JS Validation Messages */
+                /* Input Field Styles */
+                .field.input.error input {
+                    border: 2px solid #f5c6cb;
+                }
+
+                .field.input.success input {
+                    border: 2px solid #c3e6cb;
+                }
+
+                /* Error Message Styles */
+                .field.input .error-message {
+                    color: #721c24;
+                    font-size: 0.875rem;
+                    margin-top: 5px;
+                }
+
+                /* Success/Error Field Container */
+                .field.input.error {
+                    margin-bottom: 1rem;
+                }
+
+                .field.input.success {
+                    margin-bottom: 1rem;
+                }
             </style>
             <?php if (!empty($message)): ?>
-                <div class="message <?php echo strpos($message, 'Error') === 0 ? 'error' : 'success'; ?>">
+                <div class="php-message <?php echo strpos($message, 'Error') === 0 ? 'php-error' : 'php-success'; ?>">
                     <?php echo $message; ?>
                 </div>
             <?php endif; ?>
+
 
             <!-- Profile Picture Display -->
             <div class="profile-pic">
@@ -156,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     width: 150px;
                     height: 150px;
                     border-radius: 50%;
-                    border: 2px solid #553c9a;
+                    border: 2px solid #CCC7B6;
                     object-fit: cover;
                 }
 
@@ -164,6 +195,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                }
+
+                #formbox {
+                    width: 450px;
+                    height: 950px;
+                    margin: 0px 10px;
                 }
             </style>
 
@@ -215,5 +252,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </body>
-
+<?php require('footer.php');?>
 </html>

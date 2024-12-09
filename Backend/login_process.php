@@ -6,6 +6,7 @@
     }
 
     require('Connection.php');
+    
 
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = trim($_POST['password']);

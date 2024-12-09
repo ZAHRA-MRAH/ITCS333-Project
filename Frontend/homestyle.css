@@ -1,98 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 header {
-    background-color: whitesmoke;
+    background-color: #F2F1EC; 
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-.navbar{ 
+.navbar { 
     display: flex;
     align-items: center;
     padding: 10px 20px;
+    position: relative;
+    z-index: 100;
 } 
 
-.navbar-logo:visited, :link{
+.navbar-logo:visited, :link {
     display: flex;
     align-items: center;
     font-size: 20px;
     font-weight: 600;
-    background-image: linear-gradient(to right, #4f4da7, #b393d3);
+    background-image: linear-gradient(to right, #1B61AC, #2F5175);
     color: transparent;
     background-clip: text;
     text-decoration: none;
-
 }
 
-.navbar-logo:hover{
-    color: #4f4da7 !important;
+.navbar-logo:hover {
+    color: #1B61AC !important; 
     text-decoration: none;
 }
 
-
 .nav-linkk.active {
-    font-weight: bold;
-    color: #33245c;
+
+   font-weight: bold;
 }
-
-
 .leftbar {
     display: flex;
+    flex-direction: row;
     align-items: center; 
     gap: 15px; 
     flex-grow: 1;
-    align-items: center;
-    gap: 15px;
     padding: 8px;
-    color:#b393d3;
-    
+    color: #2F5175; 
+    height: 40px;
 }
 
-.navbutton1{
-    text-indent: 10px;
-}
-
-.navbutton1 a:link, a:visited{
-    color:#b393d3;
-    font-size:  16px;
+.navbutton1 a:link, a:visited {
+    height: 100%;
+    padding: 0 20px;
+    color: #2F5175; 
+    font-size: 18px;
     font-weight: normal;
     text-decoration: none;
 }
-.navbutton1 a:hover{
-    color:#8f75a8;
+.navbutton1 a:hover {
+    color: #44471C; 
     transition-duration: 1s;
     text-decoration: none;
 }
 
-.navbutton2 a:link, a:visited{
-    color:#b393d3;
-    font-size:16px ;
+.navbutton2 a:link, a:visited {
+    color: #2F5175; /* YInMn Blue */
+    font-size: 18px;
     font-weight: normal;
     text-decoration: none;
-    
 }
-.navbutton2 a:hover{
-    color:#8f75a8;
+.navbutton2 a:hover {
+    color: #44471C; /* Dark Moss Green */
     transition-duration: 1s;
     text-decoration: none;
 }
 
 .profile {
     position: relative; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
 }
-.profile img {
-    width: 45px;
-    height: 45px;
+.navbar .profile img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 5px;
-    background-color: transparent;
+    background-color: #E5E3DA; /* Alabaster */
     cursor: pointer;
 }
+
 .dropdown-menu {
     position: absolute; 
     top: 100%;
-    left:-1000px;
+    left: -1000px;
     z-index: 1000; 
-    background-color: white;
-    border: 1px solid #ddd; 
+    background-color: #FEFEFE; /* White */
+    border: 1px solid #D9D5C8; /* Bone */
     border-radius: 6px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     margin: 13px;
@@ -100,36 +103,32 @@ header {
     min-width: 150px; 
 }
 .dropdown-menu a {
+    font-size: 16px;
     display: block; 
     padding: 10px 15px; 
-    color: #b393d3; 
+    color: #2F5175; 
     text-decoration: none; 
     font-weight: normal;
 }
 .dropdown-menu a:hover {
-    background-color: #f5f5f5; /* Light gray background on hover */
-    color: #8f75a8; /* Change text color */
+    background-color: #CCC7B6; 
+    color: #44471C; 
+    text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 
+
 /* Nav Bar Styling end -----------Home Page Styling */
-#welcome-messege{
-    align-items: center;
-    text-indent: 30px;
-    background-image: linear-gradient(to right, #b393d3, #4f4da7);
-    color: transparent;
-    background-clip: text;
-}
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .box {
-    background: #fdfdfd;
+    background: #FEFEFE; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,71 +146,242 @@ header {
 
 .form-box header {
     text-align: center;
-    background-color: #fdfdfd;
+    background-color: #FEFEFE; 
     font-size: 25px;
     font-weight: 600;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    color: #2F5175;
 }
 
-.form-select{
+.form-select {
     display: block; 
     margin: 0 auto; 
-    background-color: #b393d3;
+    background-color: #FEFEFE; 
     border-radius: 5px;
     font-size: 17px;
-    border:none;
+    border: none;
     width: 175px;
     height: 35px;
-    color: #fdfdfd;
+    color: #2F5175; 
     font-weight: bold;
-    text-align: center;
+    text-align: center !important;
 }
-.form-select option{
+.form-select option {
     text-align: center;
-    background-color: #fdfdfd;
-    color: #b393d3;
+    background-color: #FEFEFE; 
+    color: #2F5175; 
 }
 
-
-
-.Date{
+.Date {
     margin: 10px 0;
     text-align: center;
 }
-.Datespan{
+.Datespan {
     font-family: Arial, sans-serif;
     font-size: 18px;
-    color: #b393d3;
+    color: #2F5175; 
     font-weight: bold;
     padding-bottom: 20px;
 }
 
 .Date input[type="date"] {
     width: 200px;
-    border: 2px solid #ccc;
+    border: 2px solid #CCC7B6; 
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
     outline: none;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #2F5175; 
 }
 
-#searchbtn{
-    margin-top: 5px ;
-    background-color: #b393d3;
+#searchbtn {
+    margin-top: 5px;
+    background-color: #2F5175; 
     border-radius: 5px;
     font-size: 17px;
     border-color: transparent;
     width: 400px;
     cursor: pointer;
     height: 40px;
-    color: #fdfdfd;
+    color: #FEFEFE; 
     font-weight: bold;
 }
 
-/* #searchbtn :hover{
-    
-} */
- 
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 8px 15px;
+    }
 
+    .navbar-logo:visited, :link {
+        font-size: 18px;
+    }
+
+    .leftbar {
+        justify-content: center;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .form-box {
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .form-box header {
+        font-size: 22px;
+    }
+
+    .form-select {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #searchbtn {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .Date input[type="date"] {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    #welcome-messege {
+        font-size: 20px;
+        margin: 15px 20px;
+    }
+
+    .profile {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+
+    .navbar-logo:visited, :link {
+        font-size: 16px;
+    }
+
+    .navbar-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .leftbar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .navbutton1 a:link, 
+    .navbutton1 a:visited,
+    .navbutton2 a:link, 
+    .navbutton2 a:visited {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .form-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .form-box header {
+        font-size: 20px;
+    }
+
+    .form-select {
+        width: 95%;
+        font-size: 14px;
+        height: 32px;
+    }
+
+    #searchbtn {
+        width: 95%;
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .Date input[type="date"] {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .Datespan, .Timespan {
+        font-size: 14px;
+    }
+
+    #welcome-messege {
+        font-size: 18px;
+        margin: 10px 15px;
+    }
+
+    .profile img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dropdown-menu {
+        min-width: 120px;
+        margin: 10px;
+    }
+
+    .dropdown-menu a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .modal-content {
+        overflow: hidden; /* Remove overflow */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-dialog {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+
+    .modal-content {
+        overflow: hidden; /* Remove overflow */
+    }
+
+    .modal-body {
+        padding: 10px;
+    }
+
+    .modal-header, .modal-footer {
+        padding: 10px;
+    }
+
+    .modal-header h5 {
+        font-size: 18px;
+    }
+
+    .modal-body p, 
+    .modal-body li {
+        font-size: 14px;
+    }
+}
