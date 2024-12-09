@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container">
-        <div class="box form-box">
+        <div class="box form-box" id="formbox">
             <header>Update Profile Information</header>
             <style>
                 /* PHP Messages */
@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     width: 150px;
                     height: 150px;
                     border-radius: 50%;
-                    border: 2px solid #553c9a;
+                    border: 2px solid #CCC7B6;
                     object-fit: cover;
                 }
 
@@ -195,6 +195,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                }
+
+                #formbox {
+                    width: 450px;
+                    height: 950px;
+                    margin: 0px 10px;
                 }
             </style>
 
@@ -246,5 +252,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </body>
-
+<?php require('footer.php');?>
 </html>
