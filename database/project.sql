@@ -5682,6 +5682,22 @@ INSERT INTO `booking` (`BookingID`, `userID`, `RoomID`, `BookingDate`, `StartTim
 (36, 3, 8, '2024-12-02', '08:00:00', '10:00:00', 'Confirmed', '2024-12-10 00:29:57');
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `RoomID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `rating` varchar(1) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `room`
@@ -5779,6 +5795,14 @@ ALTER TABLE `booking`
   ADD KEY `RoomID` (`RoomID`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `RoomID` (`RoomID`),
+  ADD KEY `UserID` (`UserID`);
+
+--
 -- Indexes for table `room`
 --
 ALTER TABLE `room`
@@ -5813,6 +5837,11 @@ ALTER TABLE `availability`
 --
 ALTER TABLE `booking`
   MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `room`
