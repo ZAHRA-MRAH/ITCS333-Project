@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2024 at 10:15 PM
+-- Generation Time: Dec 10, 2024 at 02:56 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5672,11 +5672,14 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`BookingID`, `userID`, `RoomID`, `BookingDate`, `StartTime`, `EndTime`, `Status`, `BookingTime`) VALUES
-(15, 3, 1, '2024-11-29', '08:00:00', '10:00:00', 'Cancelled', '2024-11-28 23:55:29'),
 (16, 5, 2, '2024-11-30', '08:00:00', '10:00:00', 'Confirmed', '2024-11-28 21:58:04'),
-(19, 3, 1, '2024-11-30', '08:00:00', '10:00:00', 'Cancelled', '2024-11-29 00:10:51'),
-(20, 3, 3, '2024-12-06', '08:00:00', '10:00:00', 'Confirmed', '2024-11-30 18:23:37'),
-(21, 3, 3, '2024-11-28', '08:00:00', '10:00:00', 'Confirmed', '2024-11-30 18:24:04');
+(23, 3, 3, '2025-01-09', '08:00:00', '10:00:00', 'Confirmed', '2024-12-06 14:00:28'),
+(24, 3, 4, '2025-01-01', '14:00:00', '16:00:00', 'Confirmed', '2024-12-08 15:20:51'),
+(27, 3, 2, '2024-12-30', '14:00:00', '16:00:00', 'Cancelled', '2024-12-09 13:56:32'),
+(32, 3, 1, '2025-01-09', '08:00:00', '10:00:00', 'Cancelled', '2024-12-09 15:40:24'),
+(34, 3, 6, '2024-12-17', '08:00:00', '10:00:00', 'Confirmed', '2024-12-09 19:19:00'),
+(35, 3, 16, '2024-12-11', '08:00:00', '10:00:00', 'Cancelled', '2024-12-09 21:28:58'),
+(36, 3, 8, '2024-12-02', '08:00:00', '10:00:00', 'Confirmed', '2024-12-10 00:29:57');
 
 -- --------------------------------------------------------
 
@@ -5745,7 +5748,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `FirstName`, `LastName`, `Email`, `Password`, `Role`, `ProfilePic`, `CreatedAt`, `UpdatedAt`, `PhoneNo`) VALUES
-(3, 'zahraa', 'husain', '202203876@stu.uob.edu.bh', '$2y$10$jqlbWeWeSaCzpppnOAbAIeut4usH7lS8vjPJ9Y.NzgJ0rNQkrvdO6', 'Student', '../uploads/674721203289a.jpg', '2024-11-23 21:44:17', '2024-11-27 16:39:44', '38211535'),
+(3, 'zahraa', 'husain', '202203876@stu.uob.edu.bh', '$2y$10$jqlbWeWeSaCzpppnOAbAIeut4usH7lS8vjPJ9Y.NzgJ0rNQkrvdO6', 'Student', '../uploads/675718a3c9016.jpg', '2024-11-23 21:44:17', '2024-12-09 19:19:47', '38211535'),
 (5, 'Batool', 'Alsayed', '202109262@stu.uob.edu.bh', '$2y$10$uLEXC1Z1jJpHZOOTwvcgyuJ485em8BBnDcQ92knAx7wEW04eYQEwG', 'Student', '../Pictures/default-picture.jpg', '2024-11-24 07:27:10', '2024-11-24 07:27:10', '36366460');
 
 --
@@ -5809,13 +5812,13 @@ ALTER TABLE `availability`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `BookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `RoomID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
