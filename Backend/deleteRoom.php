@@ -64,6 +64,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Frontend/AdminStyle.css">
     <title>Delete Room</title>
+    <style>
+        #main {
+            height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            #main {
+                height: 1024px;
+            }
+        }
+
+        /* Media query for phones (up to 576px wide) */
+        @media (max-width: 576px) {
+            #main {
+                height: 700px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -127,5 +145,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         });
     </script>
 </body>
+<?php require('footer.php'); ?>
 
-</html> 
+</html>
