@@ -2,10 +2,10 @@
 require('Connection.php');
 
 // Check if the user is logged in
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-  header("Location: login.php");
-  exit;
-}
+//if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+ // header("Location: login.php");
+  //exit;
+//}
 
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
