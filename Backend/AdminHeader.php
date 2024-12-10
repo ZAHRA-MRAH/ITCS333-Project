@@ -37,6 +37,7 @@
     
             </nav>
             <div class="navbutton2">
+                   <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     <a href="logout.php" id="navlink">Log out</a>
                 </div>
         </nav>

@@ -50,8 +50,7 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-  <header>
-
+<header>
     <nav class="navbar">
       <a class="navbar-logo" href="homepage.php">
         <img src="../pictures/uob-logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
@@ -62,11 +61,11 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <nav class="leftbar">
 
         <div class="navbutton1">
-          <a href="homepage.php" id="navlink">Home</a>
+          <a href="homepage.php" id="navlink" class="nav-linkk">Home</a>
         </div>
 
         <div class="navbutton2">
-          <a href="viewBookings.php" id="navlink">View Booking</a>
+          <a href="viewBookings.php" id="navlink" class="nav-linkk">View Booking</a>
         </div>
       </nav>
       <nav class="rightbar">
@@ -75,11 +74,20 @@ $time_slots = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <img src="<?php echo $profilePic; ?>" alt="Profile">
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="editprofile" href="profile.php"> Profile</a></li>
-            <li><a class="logout" href="logout.php">Log out</a></li>
+            <li>
+              <a class="editprofile" href="profile.php">
+                <i class="fa-solid fa-user"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="logout" href="logout.php">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
+
     </nav>
   </header>
 
