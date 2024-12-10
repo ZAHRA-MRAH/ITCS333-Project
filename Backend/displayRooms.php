@@ -121,10 +121,17 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
             <h2>Computer Labs</h2>
             <div class="room-list">
                 <?php foreach ($labs as $lab) { ?>
+                    <?php
+                    // Get the number of reviews for the current lab
+                    $lab_id = $lab['RoomID'];
+                    $count_reviews = $pdo->prepare("SELECT COUNT(*) FROM reviews WHERE RoomID = ?");
+                    $count_reviews->execute([$lab_id]);
+                    $total_reviews = $count_reviews->fetchColumn() ?: 0; // Default to 0 if no reviews
+                    ?>
+
                     <div class="room-card">
                         <img src="<?php echo $lab['imgURL']; ?>" alt="Room Image" class="room-img expandable-image" id="image<?php echo $lab['RoomID']; ?>" data-room-number="<?php echo $lab['RoomNumber']; ?>">
-
-
+                        <p class="total-reviews">⭐ Reviews: <span><?php echo $total_reviews; ?></span></p>
                         <h3><?php echo $lab['RoomNumber']; ?> </h3>
 
                         <!-- Button trigger modal -->
