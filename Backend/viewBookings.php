@@ -56,6 +56,8 @@ foreach ($bookings as $booking) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bookings</title>
     <link rel="icon" type="image/x-icon" href="pictures\uob-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2zJ8n13s7Zx83EGolzoggsCg5h4vfsKyd3aS" crossorigin="anonymous">
+
     <style>
 .booking-grid {
     display: grid;
@@ -223,10 +225,10 @@ h2 {
                         <div class="booking-card">
                             <img src="<?php echo htmlspecialchars($booking['imgURL']); ?>" alt="Room Image">
                             <h5><?php echo htmlspecialchars($booking['RoomNumber']); ?> - <?php echo htmlspecialchars($booking['RoomType']); ?></h5>
-                            <p>Capacity: <?php echo htmlspecialchars($booking['Capacity']); ?></p>
-                            <p>Equipment: <?php echo htmlspecialchars($booking['Equipment']); ?></p>
-                            <p>Date: <?php echo htmlspecialchars($booking['BookingDate']); ?></p>
-                            <p>Time: <?php echo htmlspecialchars($booking['StartTime']); ?> - <?php echo htmlspecialchars($booking['EndTime']); ?></p>
+                            <p> <i class="fa-solid fa-person"></i> Capacity: <?php echo htmlspecialchars($booking['Capacity']); ?></p>
+                            <p> <i class="fa-solid fa-chalkboard"></i> Equipment: <?php echo htmlspecialchars($booking['Equipment']); ?></p>
+                            <p> <i class="fa-regular fa-calendar-days"></i> Date: <?php echo htmlspecialchars($booking['BookingDate']); ?></p>
+                            <p> <i class="fa-regular fa-clock"></i> Time: <?php echo htmlspecialchars($booking['StartTime']); ?> - <?php echo htmlspecialchars($booking['EndTime']); ?></p>
                             <p>Time of Booking: <?php echo htmlspecialchars($booking['BookingTime']); ?></p>
                             <p class="status-confirmed">Status: <?php echo htmlspecialchars($booking['Status']); ?></p>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal"
@@ -250,10 +252,10 @@ h2 {
                         <div class="booking-card">
                             <img src="<?php echo htmlspecialchars($booking['imgURL']); ?>" alt="Room Image">
                             <h5><?php echo htmlspecialchars($booking['RoomNumber']); ?> - <?php echo htmlspecialchars($booking['RoomType']); ?></h5>
-                            <p>Capacity: <?php echo htmlspecialchars($booking['Capacity']); ?></p>
-                            <p>Equipment: <?php echo htmlspecialchars($booking['Equipment']); ?></p>
-                            <p>Date: <?php echo htmlspecialchars($booking['BookingDate']); ?></p>
-                            <p>Time: <?php echo htmlspecialchars($booking['StartTime']); ?> - <?php echo htmlspecialchars($booking['EndTime']); ?></p>
+                            <p> <i class="fa-solid fa-person"></i>  Capacity: <?php echo htmlspecialchars($booking['Capacity']); ?></p>
+                            <p> <i class="fa-solid fa-chalkboard"> </i> Equipment: <?php echo htmlspecialchars($booking['Equipment']); ?></p>
+                            <p> <i class="fa-regular fa-calendar-days"></i> Date: <?php echo htmlspecialchars($booking['BookingDate']); ?></p>
+                            <p> <i class="fa-regular fa-clock"></i> Time: <?php echo htmlspecialchars($booking['StartTime']); ?> - <?php echo htmlspecialchars($booking['EndTime']); ?></p>
                             <p>Time of Booking: <?php echo htmlspecialchars($booking['BookingTime']); ?></p>
                             <p class="status-confirmed">Status: <?php echo htmlspecialchars($booking['Status']); ?></p>
                         </div>
@@ -273,10 +275,10 @@ h2 {
                         <div class="booking-card">
                             <img src="<?php echo htmlspecialchars($booking['imgURL']); ?>" alt="Room Image">
                             <h5><?php echo htmlspecialchars($booking['RoomNumber']); ?> - <?php echo htmlspecialchars($booking['RoomType']); ?></h5>
-                            <p>Capacity: <?php echo htmlspecialchars($booking['Capacity']); ?></p>
-                            <p>Equipment: <?php echo htmlspecialchars($booking['Equipment']); ?></p>
-                            <p>Date: <?php echo htmlspecialchars($booking['BookingDate']); ?></p>
-                            <p>Time: <?php echo htmlspecialchars($booking['StartTime']); ?> - <?php echo htmlspecialchars($booking['EndTime']); ?></p>
+                            <p><i class="fa-solid fa-person"></i> Capacity: <?php echo htmlspecialchars($booking['Capacity']); ?></p>
+                            <p><i class="fa-solid fa-chalkboard"></i> Equipment: <?php echo htmlspecialchars($booking['Equipment']); ?></p>
+                            <p><i class="fa-regular fa-calendar-days"></i> Date: <?php echo htmlspecialchars($booking['BookingDate']); ?></p>
+                            <p><i class="fa-regular fa-clock"></i> Time: <?php echo htmlspecialchars($booking['StartTime']); ?> - <?php echo htmlspecialchars($booking['EndTime']); ?></p>
                             <p>Time of Booking: <?php echo htmlspecialchars($booking['BookingTime']); ?></p>
                             <p class="status-cancelled">Status: <?php echo htmlspecialchars($booking['Status']); ?></p>
                         </div>
