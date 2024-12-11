@@ -192,4 +192,6 @@ header {
     display: block;
 }
 
-
+h3, h2 {
+    color: #2F5175 !important;
+}

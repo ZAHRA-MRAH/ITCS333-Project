@@ -18,6 +18,25 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="../Frontend/AdminStyle.css">
     <script src="../Frontend/updateRoom.js"> </script>
     <title>Update Room</title>
+    <style>
+        
+        #main {
+            height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            #main {
+                height: 1024px;
+            }
+        }
+
+        /* Media query for phones (up to 576px wide) */
+        @media (max-width: 576px) {
+            #main {
+                height: 700px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -107,4 +126,5 @@ if (!isset($_SESSION['user_id'])) {
     }
 </script>
 </body>
+<?php require('footer.php');?>
 </html>

@@ -28,7 +28,7 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Frontend/displaystyle.css">
-
+    
 
 
 </head>
@@ -44,11 +44,14 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
             <h2>Classrooms</h2>
             <div class="room-list">
                 <?php foreach ($rooms as $room) { ?>
+                   
                     <div class="room-card">
                         <img src="<?php echo $room['imgURL']; ?>" alt="Room Image" class="room-img expandable-image" id="image<?php echo $room['RoomID']; ?>" data-room-number="<?php echo $room['RoomNumber']; ?>">
+                      
 
 
                         <h3><?php echo $room['RoomNumber']; ?> </h3>
+
 
 
                         <!-- Button trigger modal -->
@@ -112,10 +115,10 @@ $labs = $Labstmt->fetchAll(PDO::FETCH_ASSOC);
             <h2>Computer Labs</h2>
             <div class="room-list">
                 <?php foreach ($labs as $lab) { ?>
+
                     <div class="room-card">
                         <img src="<?php echo $lab['imgURL']; ?>" alt="Room Image" class="room-img expandable-image" id="image<?php echo $lab['RoomID']; ?>" data-room-number="<?php echo $lab['RoomNumber']; ?>">
-
-
+                       
                         <h3><?php echo $lab['RoomNumber']; ?> </h3>
 
                         <!-- Button trigger modal -->

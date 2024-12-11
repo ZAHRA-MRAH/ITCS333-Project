@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 #formbox {
                     width: 450px;
-                    height: 950px;
+                    height: 975px;
                     margin: 0px 10px;
                 }
             </style>
