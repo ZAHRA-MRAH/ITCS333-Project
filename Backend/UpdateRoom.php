@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
     <style>
         
         #main {
-            height: 500px;
+            height: 530px;
         }
         
         @media (max-width: 768px) {

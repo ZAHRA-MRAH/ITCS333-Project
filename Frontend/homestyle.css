@@ -33,7 +33,7 @@ header {
 }
 
 .nav-linkk.active {
-
+    color: #44471C !important; 
    font-weight: bold;
 }
 .leftbar {
